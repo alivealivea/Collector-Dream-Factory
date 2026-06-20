@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     description: `${brand.thaiTagline} ${brand.englishTagline}`,
   },
   verification: {
-    google: "ymOHKDXG-wGqhe92rkTZUZ-evfe-3QOwdMOlI1VIxbY",
+    google: "-m72jumF11WFDvngFQWLUWemcllRZQGuA_yMkGFEfOw",
   },
 };
 
