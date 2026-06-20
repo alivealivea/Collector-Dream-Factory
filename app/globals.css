@@ -56,6 +56,7 @@
 html {
   scroll-behavior: smooth;
   background: var(--void);
+  overflow-x: hidden;
 }
 
 body {
@@ -64,6 +65,7 @@ body {
   background: var(--void);
   color: var(--ivory);
   font-family: var(--font-sans);
+  overflow-x: hidden;
 }
 
 a {
@@ -97,5 +99,23 @@ a {
     animation-iteration-count: 1 !important;
     scroll-behavior: auto !important;
     transition-duration: 0.01ms !important;
+  }
+}
+
+/* Mobile Hero Headline Fix */
+.hero-headline-fix {
+  font-size: clamp(3.2rem, 13vw, 4.2rem);
+  line-height: 0.88;
+  letter-spacing: -0.06em;
+  max-width: 100%;
+  word-break: keep-all;
+  overflow-wrap: normal;
+}
+
+@media (min-width: 768px) {
+  .hero-headline-fix {
+    font-size: clamp(3rem, 7vw, 7.4rem);
+    line-height: 0.96;
+    letter-spacing: -0.04em;
   }
 }

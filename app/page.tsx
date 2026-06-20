@@ -34,7 +34,7 @@ const copy = {
       close: "ปิด",
     },
     hero: {
-      headline: "ผลงานในฝันสำหรับนักสะสมตัวจริง",
+      headline: "ผลงาน\u200bในฝัน\u200bสำหรับ\u200bนักสะสม\u200bตัวจริง",
       subheadline:
         "เลือกตัวละคร เลือกขนาด แล้วดูทันทีว่า Hero Piece ของคุณจะอยู่ตรงไหนในห้อง",
       primary: "ดูตัวอย่างขนาด",
@@ -469,7 +469,7 @@ export default function Home() {
   return (
     <main
       data-theme={theme}
-      className="min-h-screen overflow-hidden bg-void font-thai text-ivory transition-colors duration-500"
+      className="min-h-screen overflow-x-hidden bg-void font-thai text-ivory transition-colors duration-500"
     >
       <Navigation
         lang={lang}
@@ -635,7 +635,7 @@ function Hero({ t }: { t: (typeof copy)[Lang] }) {
             initial={{ opacity: 0, y: 26 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ ...transitions.cinematic, delay: 0.45 }}
-            className="text-[clamp(2.65rem,12vw,4rem)] font-semibold leading-[0.92] tracking-[-0.04em] text-ivory md:text-[clamp(3rem,7vw,7.4rem)] md:leading-[0.96]"
+            className="hero-headline-fix font-semibold text-ivory"
           >
             {t.hero.headline}
           </motion.h1>
@@ -720,7 +720,7 @@ function RoomScalePreview({ t }: { t: (typeof copy)[Lang] }) {
       className="relative z-10"
     >
       <div className="absolute left-1/2 top-12 h-[72%] w-[72%] -translate-x-1/2 rounded-full bg-gold/15 blur-3xl" />
-      <div className="relative overflow-hidden rounded-2xl border border-[var(--line)] bg-gallery/90 p-2.5 shadow-[var(--soft-shadow)] backdrop-blur-xl sm:p-3 md:p-4">
+      <div className="relative w-full max-w-full min-w-0 overflow-hidden rounded-[18px] sm:rounded-2xl border border-[var(--line)] bg-gallery/90 p-3 sm:p-3 md:p-4 shadow-[var(--soft-shadow)] backdrop-blur-xl">
         <div className="mb-3 flex items-start justify-between gap-4 px-1">
           <div className="min-w-0">
             <p className="text-xs font-bold uppercase tracking-[0.18em] text-gold">
@@ -741,7 +741,7 @@ function RoomScalePreview({ t }: { t: (typeof copy)[Lang] }) {
           </span>
         </div>
 
-        <div className="relative aspect-[1.12/1] overflow-hidden rounded-xl border border-[var(--line)] bg-[#efe7dc] dark:bg-gallery-lift sm:aspect-[1.34/1]">
+        <div className="relative aspect-[1.25/1] overflow-hidden rounded-xl border border-[var(--line)] bg-[#efe7dc] dark:bg-gallery-lift sm:aspect-[1.34/1]">
           <div className="absolute inset-0 bg-[linear-gradient(135deg,rgba(255,255,255,0.82)_0%,rgba(239,231,220,0.74)_45%,rgba(214,197,174,0.54)_100%)]" />
 
           <div className="absolute left-[22%] top-[5%] h-[54%] w-[57%] skew-x-[-18deg] rounded-t-lg border-l border-t border-[var(--line)] bg-[#fbfaf7]" />
@@ -783,7 +783,7 @@ function RoomScalePreview({ t }: { t: (typeof copy)[Lang] }) {
             fill
             priority
             sizes="(min-width: 1024px) 58vw, 96vw"
-            className="absolute inset-0 z-[1] object-cover"
+            className="absolute inset-0 z-[1] object-contain object-center sm:object-cover"
           />
           <div className="absolute inset-0 z-[2] bg-[linear-gradient(90deg,rgba(247,243,238,0.08)_0%,transparent_32%,rgba(247,243,238,0.18)_100%)]" />
 
@@ -926,19 +926,19 @@ function RoomScalePreview({ t }: { t: (typeof copy)[Lang] }) {
           <button
             type="button"
             onClick={() => fileInputRef.current?.click()}
-            className="w-full rounded-lg border border-gold bg-gold px-4 py-3 text-sm font-extrabold text-[var(--button-text)] shadow-[0_10px_24px_rgba(185,130,43,0.2)]"
+            className="w-full rounded-lg border border-gold bg-gold px-3 py-2 text-xs font-extrabold text-[var(--button-text)] shadow-[0_10px_24px_rgba(185,130,43,0.2)]"
           >
             {t.preview.upload}
           </button>
-          <p className="mt-2 text-xs font-medium leading-5 text-mist">
+          <p className="mt-1.5 text-[11px] font-medium leading-4 text-mist">
             {t.preview.uploadHelper}
           </p>
-          <div className="-mx-1 mt-3 flex snap-x gap-2 overflow-x-auto px-1 pb-2">
+          <div className="-mx-1 mt-2.5 flex snap-x gap-2 overflow-x-auto px-1 pb-2">
             {uploadedImage ? (
               <button
                 type="button"
                 onClick={() => setUploadedImage(null)}
-                className="relative h-16 w-16 shrink-0 snap-start overflow-hidden rounded-lg border border-cyan bg-[#f3eee7]"
+                className="relative h-[52px] w-[52px] shrink-0 snap-start overflow-hidden rounded-lg border border-cyan bg-[#f3eee7]"
                 title={t.preview.uploadedName}
               >
                 <img src={uploadedImage} alt={t.preview.uploadedName} className="h-full w-full object-contain" />
@@ -953,20 +953,20 @@ function RoomScalePreview({ t }: { t: (typeof copy)[Lang] }) {
                   setCharacterId(character.id);
                 }}
                 className={cn(
-                  "relative h-16 w-16 shrink-0 snap-start overflow-hidden rounded-lg border bg-[#f3eee7]",
+                  "relative h-[52px] w-[52px] shrink-0 snap-start overflow-hidden rounded-lg border bg-[#f3eee7]",
                   !uploadedImage && characterId === character.id
                     ? "border-cyan shadow-[0_0_0_2px_rgba(58,175,169,0.2)]"
                     : "border-black/5",
                 )}
                 title={character.name}
               >
-                <Image src={character.image} alt={character.name} fill sizes="64px" className="object-contain p-1" />
+                <Image src={character.image} alt={character.name} fill sizes="52px" className="object-contain p-1" />
               </button>
             ))}
           </div>
         </div>
 
-        <div className="mt-3 grid grid-cols-4 gap-1.5 sm:mt-4 sm:gap-2">
+        <div className="mt-3 grid grid-cols-2 gap-1.5 sm:mt-4 sm:grid-cols-4 sm:gap-2">
           {chips.map((chip) => (
             <button
               key={chip.key}
