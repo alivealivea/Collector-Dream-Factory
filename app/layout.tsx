@@ -26,6 +26,9 @@ export const metadata: Metadata = {
     title: "Collector Dream Factory",
     description: `${brand.thaiTagline} ${brand.englishTagline}`,
   },
+  verification: {
+    google: "ymOHKDXG-wGqhe92rkTZUZ-evfe-3QOwdMOlI1VIxbY",
+  },
 };
 
 export default function RootLayout({
