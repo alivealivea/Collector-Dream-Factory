@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import { links } from "@/src/config/links";
 import { brand, siteUrl } from "@/src/config/seo";
+import { guides } from "@/src/data/guides";
 
 export const dynamic = "force-static";
 
@@ -37,6 +38,11 @@ Collector Dream Factory helps customers who search for รับทำฟิก�
 - Story: ${siteUrl}/story
 - Dream Build: ${siteUrl}/dream-build
 - FAQ: ${siteUrl}/faq
+- Guides Landing: ${siteUrl}/guides
+
+## Guides
+
+${guides.map(g => `- ${g.titleTh} (${siteUrl}/guides/${g.slug}): ${g.excerptTh}`).join("\n")}
 
 ## Contact
 

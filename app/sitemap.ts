@@ -1,6 +1,7 @@
 import type { MetadataRoute } from "next";
 import { pieces } from "@/src/data/pieces";
 import { stories } from "@/src/data/stories";
+import { guides } from "@/src/data/guides";
 import { absoluteUrl, importantRoutes } from "@/src/config/seo";
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -26,5 +27,19 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.65,
   }));
 
-  return [...routes, ...collectionRoutes, ...storyRoutes];
+  const guideLandingRoute = {
+    url: absoluteUrl("/guides"),
+    lastModified: now,
+    changeFrequency: "weekly" as const,
+    priority: 0.8,
+  };
+
+  const guideRoutes = guides.map((guide) => ({
+    url: absoluteUrl(`/guides/${guide.slug}`),
+    lastModified: now,
+    changeFrequency: "weekly" as const,
+    priority: 0.7,
+  }));
+
+  return [...routes, ...collectionRoutes, ...storyRoutes, guideLandingRoute, ...guideRoutes];
 }

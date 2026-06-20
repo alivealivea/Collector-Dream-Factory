@@ -28,6 +28,7 @@ const copy = {
       project: "สั่งทำ",
       about: "เรื่องราว",
       faq: "คำถามที่พบบ่อย",
+      guides: "คู่มือการสั่งทำ",
       instagram: "Instagram",
       cta: "เริ่มโปรเจกต์",
       menu: "เมนู",
@@ -143,6 +144,7 @@ const copy = {
       project: "Dream Project",
       about: "Story",
       faq: "FAQ",
+      guides: "Guides",
       instagram: "Instagram",
       cta: "Start Project",
       menu: "Menu",
@@ -1471,6 +1473,9 @@ function Footer({ t }: { t: (typeof copy)[Lang] }) {
           <a href="/faq" className="hover:text-ivory">
             {t.nav.faq}
           </a>
+          <Link href="/guides" className="hover:text-ivory">
+            {t.nav.guides}
+          </Link>
           {socialLinks.map((link) => (
             <a
               key={link.name}
