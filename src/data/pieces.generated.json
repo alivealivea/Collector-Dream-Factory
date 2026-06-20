@@ -1,0 +1,211 @@
+{
+  "generatedAt": "2026-06-16T15:05:19.944Z",
+  "source": "content/pieces.sample.csv",
+  "pieces": [
+    {
+      "slug": "android-18",
+      "titleTh": "Android 18",
+      "titleEn": "Android 18",
+      "category": "Life-size",
+      "startingPrice": "฿18,900+",
+      "sizeOptions": [
+        "30",
+        "60",
+        "100",
+        "170"
+      ],
+      "heroImage": "/images/android-18.png",
+      "galleryImages": [
+        "/images/android-18.png",
+        "/images/portfolio/portfolio-08.jpg",
+        "/images/hero-lifesize-android.jpg",
+        "/images/room-preview.png"
+      ],
+      "descriptionTh": "งานสะสมขนาดใหญ่ที่ถูกสร้างขึ้นเพื่อให้กลายเป็นจุดเด่นของห้องสะสมอย่างแท้จริง",
+      "descriptionEn": "A large collectible made to become the main statement piece in a collector room.",
+      "availableForBuild": true
+    },
+    {
+      "slug": "goku",
+      "titleTh": "Goku",
+      "titleEn": "Goku",
+      "category": "Gallery Piece",
+      "startingPrice": "฿12,000+",
+      "sizeOptions": [
+        "30",
+        "60",
+        "100",
+        "170"
+      ],
+      "heroImage": "/images/goku.png",
+      "galleryImages": [
+        "/images/goku.png",
+        "/images/portfolio/portfolio-27.jpg",
+        "/images/portfolio/portfolio-28.jpg",
+        "/images/room-preview.png"
+      ],
+      "descriptionTh": "ชิ้นงานขนาดตั้งโชว์ที่เก็บความรู้สึกของตัวละครวัยเด็กไว้แบบเรียบง่ายและชัดเจน",
+      "descriptionEn": "A display piece that keeps the energy of a childhood character clear and simple.",
+      "availableForBuild": true
+    },
+    {
+      "slug": "akaza",
+      "titleTh": "Akaza",
+      "titleEn": "Akaza",
+      "category": "Prototype",
+      "startingPrice": "฿18,900+",
+      "sizeOptions": [
+        "30",
+        "60",
+        "100",
+        "170"
+      ],
+      "heroImage": "/images/akaza.png",
+      "galleryImages": [
+        "/images/akaza.png",
+        "/images/story-akaza-process.jpg",
+        "/images/portfolio/portfolio-17.jpg",
+        "/images/height-comparison.png"
+      ],
+      "descriptionTh": "งานต้นแบบขนาดใหญ่ที่เน้นท่าทาง กล้ามเนื้อ และสเกลของตัวละครให้เห็นชัด",
+      "descriptionEn": "A large prototype focused on pose muscle form and readable character scale.",
+      "availableForBuild": true
+    },
+    {
+      "slug": "watermelon",
+      "titleTh": "Watermelon",
+      "titleEn": "Watermelon",
+      "category": "Gallery Piece",
+      "startingPrice": "฿3,900+",
+      "sizeOptions": [
+        "30",
+        "60",
+        "100",
+        "170"
+      ],
+      "heroImage": "/images/watermelon.png",
+      "galleryImages": [
+        "/images/watermelon.png",
+        "/images/story-watermelon-scale.jpg",
+        "/images/portfolio/portfolio-25.jpg",
+        "/images/room-preview.png"
+      ],
+      "descriptionTh": "งานคาแรกเตอร์สดใสที่เหมาะกับโต๊ะ ชั้นวาง หรือมุมสะสมขนาดเล็ก",
+      "descriptionEn": "A bright character piece for a desk shelf or small collector corner.",
+      "availableForBuild": true
+    },
+    {
+      "slug": "r2d2",
+      "titleTh": "R2-D2",
+      "titleEn": "R2-D2",
+      "category": "Life-size",
+      "startingPrice": "฿18,900+",
+      "sizeOptions": [
+        "30",
+        "60",
+        "100",
+        "170"
+      ],
+      "heroImage": "/images/r2d2.png",
+      "galleryImages": [
+        "/images/r2d2.png",
+        "/images/story-r2d2-scale.jpg",
+        "/images/portfolio/portfolio-23.jpg",
+        "/images/room-preview.png"
+      ],
+      "descriptionTh": "งานหุ่นยนต์ขนาดใหญ่ที่ต้องอ่านสเกลได้ทันทีเมื่อวางอยู่ใกล้คนจริง",
+      "descriptionEn": "A large robot piece designed so the scale is clear beside a real person.",
+      "availableForBuild": true
+    },
+    {
+      "slug": "stitch",
+      "titleTh": "Stitch",
+      "titleEn": "Stitch",
+      "category": "Gallery Piece",
+      "startingPrice": "฿6,900+",
+      "sizeOptions": [
+        "30",
+        "60",
+        "100",
+        "170"
+      ],
+      "heroImage": "/images/stitch.png",
+      "galleryImages": [
+        "/images/stitch.png",
+        "/images/story-stitch-showcase.jpg",
+        "/images/portfolio/portfolio-24.jpg",
+        "/images/room-preview.png"
+      ],
+      "descriptionTh": "ชิ้นงานที่ทำให้มุมสะสมดูสนุกขึ้น โดยยังคงรายละเอียดของตัวละครไว้ครบ",
+      "descriptionEn": "A playful piece that keeps the character detail while making the display corner feel alive.",
+      "availableForBuild": true
+    },
+    {
+      "slug": "c3po",
+      "titleTh": "C-3PO",
+      "titleEn": "C-3PO",
+      "category": "Gallery Piece",
+      "startingPrice": "฿12,000+",
+      "sizeOptions": [
+        "30",
+        "60",
+        "100",
+        "170"
+      ],
+      "heroImage": "/images/c3po.png",
+      "galleryImages": [
+        "/images/c3po.png",
+        "/images/room-preview.png",
+        "/images/portfolio/portfolio-09.jpg"
+      ],
+      "descriptionTh": "โทนทองที่เข้ากับห้องสว่างและเฟอร์นิเจอร์ไม้ เหมาะกับงานตั้งโชว์แบบพรีเมียม",
+      "descriptionEn": "A gold-toned display piece that works well with warm rooms and wooden furniture.",
+      "availableForBuild": true
+    },
+    {
+      "slug": "bearbrick",
+      "titleTh": "Bearbrick",
+      "titleEn": "Bearbrick",
+      "category": "Gallery Piece",
+      "startingPrice": "฿12,000+",
+      "sizeOptions": [
+        "30",
+        "60",
+        "100",
+        "170"
+      ],
+      "heroImage": "/images/bearbrick.png",
+      "galleryImages": [
+        "/images/bearbrick.png",
+        "/images/room-preview.png",
+        "/images/portfolio/portfolio-09.jpg"
+      ],
+      "descriptionTh": "ชิ้นงานสีดำเรียบที่เข้ากับห้องโมเดิร์นและมุมสะสมแบบมินิมอล",
+      "descriptionEn": "A clean black display piece for modern rooms and minimal collector corners.",
+      "availableForBuild": true
+    },
+    {
+      "slug": "lover",
+      "titleTh": "Lovers",
+      "titleEn": "Lovers",
+      "category": "Custom",
+      "startingPrice": "฿6,900+",
+      "sizeOptions": [
+        "30",
+        "60",
+        "100",
+        "170"
+      ],
+      "heroImage": "/images/lover.png",
+      "galleryImages": [
+        "/images/lover.png",
+        "/images/portfolio/portfolio-01.jpg",
+        "/images/memory-twins.jpg",
+        "/images/portfolio/portfolio-13.png"
+      ],
+      "descriptionTh": "งานคู่ที่เก็บท่าทาง เสื้อผ้า และความทรงจำให้กลายเป็นของสะสมเฉพาะตัว",
+      "descriptionEn": "A custom couple collectible that keeps posture clothing and memory in one piece.",
+      "availableForBuild": true
+    }
+  ]
+}

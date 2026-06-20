@@ -1,0 +1,16 @@
+node_modules/
+.next/
+out/
+dist/
+.vercel/
+
+.env
+.env.local
+.env.production
+.env*.local
+!.env.example
+
+public/uploads/leads/
+*.log
+*.tsbuildinfo
+preview-*.png
