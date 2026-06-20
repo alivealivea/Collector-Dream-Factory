@@ -35,10 +35,8 @@ export const importantRoutes = [
   { path: "/", priority: 1 },
   { path: "/collections", priority: 0.8 },
   { path: "/story", priority: 0.8 },
-  { path: "/dream-build", priority: 0.9 },
   { path: "/dream-project", priority: 0.9 },
   { path: "/project-status", priority: 0.5 },
-  { path: "/thank-you", priority: 0.3 },
   { path: "/faq", priority: 0.8 },
 ];
 
