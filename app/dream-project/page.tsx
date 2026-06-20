@@ -211,30 +211,30 @@ export default function DreamProjectPage() {
       <DreamNav />
       <FloatingContacts />
 
-      <section className="px-5 pb-10 pt-14 md:px-10 md:pb-16 md:pt-20 xl:px-16">
+      <section className="px-4 pb-7 pt-10 md:px-10 md:pb-16 md:pt-20 xl:px-16">
         <div className="mx-auto max-w-[1120px]">
           <p className="mb-5 text-sm font-bold uppercase tracking-[0.18em] text-gold">
             DREAM PROJECT
           </p>
-          <h1 className="max-w-5xl text-[clamp(3.2rem,9vw,7.5rem)] font-semibold leading-[0.94] tracking-[-0.055em]">
+          <h1 className="max-w-5xl text-[clamp(2.7rem,12vw,4rem)] font-semibold leading-[0.92] tracking-[-0.04em] md:text-[clamp(3.2rem,9vw,7.5rem)] md:leading-[0.94]">
             เริ่มโปรเจกต์ของคุณ
           </h1>
-          <p className="mt-7 max-w-3xl whitespace-pre-line text-xl font-medium leading-9 text-mist md:text-2xl">
+          <p className="mt-4 max-w-3xl whitespace-pre-line text-base font-medium leading-7 text-mist md:mt-7 md:text-2xl md:leading-9">
             ส่งรูปอ้างอิง เลือกขนาด และบอกไอเดียของคุณ{"\n"}
             เราจะช่วยประเมินว่าควรเริ่มจากแบบไหน
           </p>
         </div>
       </section>
 
-      <form onSubmit={handleSubmit} className="px-5 pb-16 md:px-10 md:pb-24 xl:px-16">
-        <div className="mx-auto grid max-w-[1120px] gap-5">
+      <form onSubmit={handleSubmit} className="px-4 pb-12 md:px-10 md:pb-24 xl:px-16">
+        <div className="mx-auto grid max-w-[1120px] gap-3 md:gap-5">
           <FormSection eyebrow="UPLOAD REFERENCE" title="Upload Reference">
-            <label className="flex min-h-56 cursor-pointer flex-col items-center justify-center rounded-2xl border border-dashed border-gold/45 bg-gallery p-6 text-center shadow-[var(--soft-shadow)] transition hover:-translate-y-0.5 hover:border-gold">
-              <ImagePlus className="mb-4 text-gold" size={36} />
-              <span className="text-xl font-semibold tracking-[-0.02em]">
+            <label className="flex min-h-40 w-full cursor-pointer flex-col items-center justify-center rounded-xl border border-dashed border-gold/45 bg-gallery p-4 text-center shadow-[var(--soft-shadow)] transition hover:-translate-y-0.5 hover:border-gold md:min-h-56 md:rounded-2xl md:p-6">
+              <ImagePlus className="mb-3 text-gold md:mb-4" size={32} />
+              <span className="text-lg font-semibold md:text-xl">
                 อัปโหลดรูปอ้างอิง
               </span>
-              <span className="mt-2 max-w-md text-sm leading-6 text-mist">
+              <span className="mt-2 max-w-md text-xs leading-5 text-mist md:text-sm md:leading-6">
                 เลือกรูปตัวละคร รูปคนจริง สัตว์เลี้ยง หรือภาพไอเดียได้หลายรูป
               </span>
               <input
@@ -314,7 +314,7 @@ export default function DreamProjectPage() {
               onChange={(event) => updateField("details", event.target.value)}
               rows={6}
               placeholder="เล่าไอเดีย ขนาดที่อยากได้ รายละเอียดที่สำคัญ หรือข้อจำกัดของพื้นที่วางงาน"
-              className="w-full resize-none rounded-2xl border border-[var(--line)] bg-gallery p-5 text-base font-medium leading-7 text-ivory outline-none transition focus:border-gold"
+              className="w-full resize-none rounded-xl border border-[var(--line)] bg-gallery p-4 text-base font-medium leading-7 text-ivory outline-none transition focus:border-gold md:rounded-2xl md:p-5"
             />
           </FormSection>
 
@@ -358,11 +358,11 @@ export default function DreamProjectPage() {
             </div>
           </FormSection>
 
-          <div className="flex justify-center pt-4">
+          <div className="flex justify-center pt-2 md:pt-4">
             <button
               type="submit"
               disabled={isSubmitting}
-              className="inline-flex min-h-12 items-center justify-center rounded-lg bg-gold px-8 py-4 text-sm font-bold text-[var(--button-text)] shadow-[0_12px_30px_rgba(185,130,43,0.22)] transition hover:-translate-y-0.5 hover:bg-gold-light"
+              className="inline-flex min-h-12 w-full items-center justify-center rounded-lg bg-gold px-8 py-4 text-sm font-bold text-[var(--button-text)] shadow-[0_12px_30px_rgba(185,130,43,0.22)] transition hover:-translate-y-0.5 hover:bg-gold-light sm:w-auto"
             >
               {isSubmitting ? "กำลังส่งข้อมูล..." : "ส่งโปรเจกต์ให้ประเมิน"}
             </button>
@@ -376,14 +376,14 @@ export default function DreamProjectPage() {
         </div>
       </form>
 
-      <section className="px-5 pb-20 md:px-10 md:pb-28 xl:px-16">
-        <div className="mx-auto max-w-[1120px] rounded-3xl border border-[var(--line)] bg-gallery p-7 text-center shadow-[var(--soft-shadow)] md:p-12">
-          <h2 className="mx-auto max-w-4xl text-[clamp(2.5rem,5vw,5.6rem)] font-semibold leading-[0.98] tracking-[-0.055em]">
+      <section className="px-4 pb-14 md:px-10 md:pb-28 xl:px-16">
+        <div className="mx-auto max-w-[1120px] rounded-2xl border border-[var(--line)] bg-gallery p-5 text-center shadow-[var(--soft-shadow)] md:rounded-3xl md:p-12">
+          <h2 className="mx-auto max-w-4xl text-[clamp(2rem,10vw,3rem)] font-semibold leading-[0.98] tracking-[-0.04em] md:text-[clamp(2.5rem,5vw,5.6rem)]">
             พร้อมเปลี่ยนไอเดียในหัว ให้กลายเป็นของจริงหรือยัง?
           </h2>
-          <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
-            <Button href="/dream-project">เริ่มโปรเจกต์ของคุณ</Button>
-            <Button href="/story" variant="secondary">
+          <div className="mt-6 flex flex-col justify-center gap-2.5 sm:mt-8 sm:flex-row sm:gap-3">
+            <Button href="/dream-project" className="w-full sm:w-auto">เริ่มโปรเจกต์ของคุณ</Button>
+            <Button href="/story" variant="secondary" className="w-full sm:w-auto">
               ดูผลงานเพิ่มเติม
             </Button>
           </div>
@@ -396,8 +396,8 @@ export default function DreamProjectPage() {
 function DreamNav() {
   return (
     <header className="border-b border-[var(--line)] bg-void/82 backdrop-blur-xl">
-      <nav className="mx-auto flex h-16 max-w-[1440px] items-center justify-between px-5 md:px-10 xl:px-16">
-        <Link href="/" className="font-display text-lg tracking-wide">
+      <nav className="mx-auto flex h-14 max-w-[1440px] items-center justify-between px-4 md:h-16 md:px-10 xl:px-16">
+        <Link href="/" className="truncate font-display text-sm tracking-wide sm:text-lg">
           Collector Dream Factory
         </Link>
         <div className="hidden items-center gap-7 text-sm font-semibold text-mist md:flex">
@@ -426,13 +426,13 @@ function FormSection({
   children: ReactNode;
 }) {
   return (
-    <section className="rounded-3xl border border-[var(--line)] bg-gallery p-5 shadow-[var(--soft-shadow)] md:p-7">
+    <section className="rounded-2xl border border-[var(--line)] bg-gallery p-4 shadow-[var(--soft-shadow)] md:rounded-3xl md:p-7">
       {eyebrow ? (
         <p className="mb-3 text-sm font-bold uppercase tracking-[0.18em] text-gold">
           {eyebrow}
         </p>
       ) : null}
-      <h2 className="mb-5 text-[clamp(1.8rem,3vw,3rem)] font-semibold leading-tight tracking-[-0.04em]">
+      <h2 className="mb-4 text-[clamp(1.45rem,7vw,2rem)] font-semibold leading-tight tracking-[-0.03em] md:mb-5 md:text-[clamp(1.8rem,3vw,3rem)]">
         {title}
       </h2>
       {children}
@@ -450,14 +450,14 @@ function ChoiceGrid({
   onSelect: (value: string) => void;
 }) {
   return (
-    <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-5">
+    <div className="grid grid-cols-2 gap-2 sm:gap-3 lg:grid-cols-5">
       {options.map((option) => (
         <button
           key={option}
           type="button"
           onClick={() => onSelect(option)}
           className={cn(
-            "min-h-20 rounded-2xl border px-4 py-4 text-left text-base font-bold transition",
+            "min-h-14 rounded-xl border px-3 py-3 text-left text-sm font-bold leading-5 transition md:min-h-20 md:rounded-2xl md:px-4 md:py-4 md:text-base",
             selected === option
               ? "border-gold bg-gold text-[var(--button-text)] shadow-[0_12px_28px_rgba(185,130,43,0.18)]"
               : "border-[var(--line)] bg-[#F5F1EA] text-ivory hover:border-gold/50",
@@ -485,7 +485,7 @@ function TextField({
       <input
         value={value}
         onChange={(event) => onChange(event.target.value)}
-        className="min-h-12 rounded-2xl border border-[var(--line)] bg-[#F5F1EA] px-4 text-base font-semibold text-ivory outline-none transition focus:border-gold"
+        className="min-h-12 w-full rounded-xl border border-[var(--line)] bg-[#F5F1EA] px-4 text-base font-semibold text-ivory outline-none transition focus:border-gold md:rounded-2xl"
       />
     </label>
   );
@@ -549,7 +549,7 @@ function ContactCards({ contacts = contactLinks }: { contacts?: readonly Contact
 
 function FloatingContacts() {
   return (
-    <div className="fixed bottom-5 right-4 z-50 flex flex-col items-end gap-2 md:bottom-7 md:right-7">
+    <div className="fixed bottom-7 right-7 z-50 hidden flex-col items-end gap-2 md:flex">
       {contactLinks.slice(0, 4).map((contact, index) => (
         <a
           key={contact.platform}

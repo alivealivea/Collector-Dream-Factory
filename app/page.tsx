@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { type ChangeEvent, useEffect, useMemo, useRef, useState } from "react";
 import { motion } from "framer-motion";
-import { ArrowLeft, ArrowRight } from "lucide-react";
+import { ArrowLeft, ArrowRight, Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { links, socialLinks } from "@/src/config/links";
 import { pieces as pieceData } from "@/src/data/pieces";
@@ -524,8 +524,8 @@ function Navigation({
       transition={{ ...transitions.cinematic, delay: 0.15 }}
       className="fixed inset-x-0 top-0 z-50 border-b border-[var(--line)] bg-void/78 backdrop-blur-[20px]"
     >
-      <nav className="mx-auto flex h-16 max-w-[1440px] items-center justify-between px-5 md:px-10 xl:px-16">
-        <a href="#" className="font-display text-lg tracking-wide text-ivory">
+      <nav className="mx-auto flex h-14 max-w-[1440px] items-center justify-between px-4 md:h-16 md:px-10 xl:px-16">
+        <a href="#" className="truncate font-display text-sm tracking-wide text-ivory sm:text-lg">
           Collector Dream Factory
         </a>
         <div className="hidden items-center gap-7 text-sm font-semibold text-mist md:flex">
@@ -547,34 +547,36 @@ function Navigation({
         <button
           type="button"
           onClick={onToggleMenu}
-          className="rounded-full border border-[var(--line)] bg-gallery px-4 py-2 text-sm font-semibold text-ivory md:hidden"
+          className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-[var(--line)] bg-gallery text-ivory md:hidden"
+          aria-label={menuOpen ? t.nav.close : t.nav.menu}
+          aria-expanded={menuOpen}
         >
-          {menuOpen ? t.nav.close : t.nav.menu}
+          {menuOpen ? <X size={19} /> : <Menu size={19} />}
         </button>
       </nav>
       {menuOpen ? (
-        <div className="border-t border-[var(--line)] bg-void px-5 py-5 md:hidden">
-          <div className="flex flex-col gap-4 text-lg font-semibold text-ivory">
+        <div className="max-h-[calc(100vh-3.5rem)] overflow-y-auto border-t border-[var(--line)] bg-void px-4 py-4 md:hidden">
+          <div className="flex flex-col gap-3 text-base font-semibold text-ivory">
             {navLinks.map((link) => (
               <a key={link.href} href={link.href} onClick={onToggleMenu}>
                 {link.label}
               </a>
             ))}
           </div>
-          <div className="mt-5 flex flex-wrap gap-2">
+          <div className="mt-4 grid grid-cols-2 gap-2">
             <ToggleButton onClick={onToggleLang}>{lang.toUpperCase()} / {lang === "th" ? "EN" : "TH"}</ToggleButton>
             <ToggleButton onClick={onToggleTheme}>
               {theme === "light" ? "Light" : "Dark"}
             </ToggleButton>
-            <Button href="/dream-project">
+            <Button href="/dream-project" className="col-span-2 w-full">
               {t.nav.cta}
             </Button>
           </div>
-          <div className="mt-5 border-t border-[var(--line)] pt-5">
+          <div className="mt-4 border-t border-[var(--line)] pt-4">
             <p className="mb-3 text-xs font-bold uppercase tracking-[0.16em] text-gold">
               Social
             </p>
-            <div className="grid grid-cols-2 gap-3 text-sm font-semibold text-mist">
+            <div className="grid grid-cols-2 gap-2 text-sm font-semibold text-mist">
               {socialLinks.map((link) => (
                 <a
                   key={link.name}
@@ -617,9 +619,9 @@ function ToggleButton({
 
 function Hero({ t }: { t: (typeof copy)[Lang] }) {
   return (
-    <section className="relative overflow-hidden bg-void px-5 pb-10 pt-24 md:px-10 md:pb-14 md:pt-20 xl:px-16">
+    <section className="relative overflow-hidden bg-void px-4 pb-8 pt-20 md:px-10 md:pb-14 md:pt-20 xl:px-16">
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_55%_45%_at_72%_38%,rgba(185,130,43,0.13)_0%,rgba(185,130,43,0.045)_42%,transparent_72%)]" />
-      <div className="mx-auto grid min-h-[85vh] max-w-[1440px] items-center gap-8 md:grid-cols-[0.86fr_1.14fr]">
+      <div className="mx-auto grid max-w-[1440px] items-center gap-7 md:min-h-[85vh] md:grid-cols-[0.86fr_1.14fr] md:gap-8">
         <div className="relative z-10 max-w-[680px]">
           <motion.p
             initial={{ opacity: 0, y: 16 }}
@@ -633,7 +635,7 @@ function Hero({ t }: { t: (typeof copy)[Lang] }) {
             initial={{ opacity: 0, y: 26 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ ...transitions.cinematic, delay: 0.45 }}
-            className="text-[clamp(3rem,14vw,7.4rem)] font-semibold leading-[0.96] tracking-[-0.04em] text-ivory"
+            className="text-[clamp(2.65rem,12vw,4rem)] font-semibold leading-[0.92] tracking-[-0.04em] text-ivory md:text-[clamp(3rem,7vw,7.4rem)] md:leading-[0.96]"
           >
             {t.hero.headline}
           </motion.h1>
@@ -641,7 +643,7 @@ function Hero({ t }: { t: (typeof copy)[Lang] }) {
             initial={{ opacity: 0, y: 18 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ ...transitions.smooth, delay: 0.68 }}
-            className="mt-6 max-w-xl text-lg font-medium leading-8 text-mist md:text-xl"
+            className="mt-4 max-w-xl text-base font-medium leading-7 text-mist md:mt-6 md:text-xl md:leading-8"
           >
             {t.hero.subheadline}
           </motion.p>
@@ -649,10 +651,10 @@ function Hero({ t }: { t: (typeof copy)[Lang] }) {
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ ...transitions.smooth, delay: 0.85 }}
-            className="mt-7 flex flex-col gap-3 sm:flex-row"
+            className="mt-5 flex flex-col gap-2.5 sm:flex-row md:mt-7 md:gap-3"
           >
-            <Button href="#room-preview">{t.hero.primary}</Button>
-            <Button href="/dream-project" variant="secondary">
+            <Button href="#room-preview" className="w-full sm:w-auto">{t.hero.primary}</Button>
+            <Button href="/dream-project" variant="secondary" className="w-full sm:w-auto">
               {t.hero.secondary}
             </Button>
           </motion.div>
@@ -718,7 +720,7 @@ function RoomScalePreview({ t }: { t: (typeof copy)[Lang] }) {
       className="relative z-10"
     >
       <div className="absolute left-1/2 top-12 h-[72%] w-[72%] -translate-x-1/2 rounded-full bg-gold/15 blur-3xl" />
-      <div className="relative overflow-hidden rounded-2xl border border-[var(--line)] bg-gallery/90 p-3 shadow-[var(--soft-shadow)] backdrop-blur-xl md:p-4">
+      <div className="relative overflow-hidden rounded-2xl border border-[var(--line)] bg-gallery/90 p-2.5 shadow-[var(--soft-shadow)] backdrop-blur-xl sm:p-3 md:p-4">
         <div className="mb-3 flex items-start justify-between gap-4 px-1">
           <div className="min-w-0">
             <p className="text-xs font-bold uppercase tracking-[0.18em] text-gold">
@@ -739,7 +741,7 @@ function RoomScalePreview({ t }: { t: (typeof copy)[Lang] }) {
           </span>
         </div>
 
-        <div className="relative aspect-[1.34/1] overflow-hidden rounded-xl border border-[var(--line)] bg-[#efe7dc] dark:bg-gallery-lift">
+        <div className="relative aspect-[1.12/1] overflow-hidden rounded-xl border border-[var(--line)] bg-[#efe7dc] dark:bg-gallery-lift sm:aspect-[1.34/1]">
           <div className="absolute inset-0 bg-[linear-gradient(135deg,rgba(255,255,255,0.82)_0%,rgba(239,231,220,0.74)_45%,rgba(214,197,174,0.54)_100%)]" />
 
           <div className="absolute left-[22%] top-[5%] h-[54%] w-[57%] skew-x-[-18deg] rounded-t-lg border-l border-t border-[var(--line)] bg-[#fbfaf7]" />
@@ -785,7 +787,7 @@ function RoomScalePreview({ t }: { t: (typeof copy)[Lang] }) {
           />
           <div className="absolute inset-0 z-[2] bg-[linear-gradient(90deg,rgba(247,243,238,0.08)_0%,transparent_32%,rgba(247,243,238,0.18)_100%)]" />
 
-          <div className="absolute left-2 top-2 z-20 w-[34%] rounded-xl border border-[var(--line)] bg-white/88 p-2 shadow-[0_18px_44px_rgba(23,19,15,0.14)] backdrop-blur-md sm:left-3 sm:top-3 sm:w-[28%] sm:p-3">
+          <div className="absolute left-2 top-2 z-20 hidden w-[34%] rounded-xl border border-[var(--line)] bg-white/88 p-2 shadow-[0_18px_44px_rgba(23,19,15,0.14)] backdrop-blur-md sm:left-3 sm:top-3 sm:block sm:w-[28%] sm:p-3">
             <div className="mb-3 flex items-center justify-between gap-2">
               <p className="text-xs font-extrabold italic text-[#17130f] sm:text-sm">
                 {t.preview.library}
@@ -909,25 +911,69 @@ function RoomScalePreview({ t }: { t: (typeof copy)[Lang] }) {
             initial={{ opacity: 0, x: -8 }}
             animate={{ opacity: 1, x: 0 }}
             transition={transitions.smooth}
-            className="absolute right-[6%] z-30 rounded-full border border-cyan/40 bg-white/82 px-3 py-1 text-xs font-extrabold text-[#17130f] shadow-[0_10px_24px_rgba(23,19,15,0.1)]"
+            className="absolute right-[2%] z-30 rounded-full border border-cyan/40 bg-white/88 px-2 py-1 text-[10px] font-extrabold text-[#17130f] shadow-[0_10px_24px_rgba(23,19,15,0.1)] sm:right-[6%] sm:px-3 sm:text-xs"
             style={{ bottom: `calc(17% + ${active.line}% - 18px)` }}
           >
             {t.preview.measurement}: {active.label}
           </motion.div>
 
-          <div className="absolute bottom-4 left-[34%] z-20 rounded-full border border-[var(--line)] bg-white/82 px-3 py-1 text-xs font-bold text-[#6d6258] shadow-sm">
+          <div className="absolute bottom-4 left-[34%] z-20 hidden rounded-full border border-[var(--line)] bg-white/82 px-3 py-1 text-xs font-bold text-[#6d6258] shadow-sm sm:block">
             {activeCharacter.description}
           </div>
         </div>
 
-        <div className="mt-4 grid grid-cols-4 gap-2">
+        <div className="mt-3 sm:hidden">
+          <button
+            type="button"
+            onClick={() => fileInputRef.current?.click()}
+            className="w-full rounded-lg border border-gold bg-gold px-4 py-3 text-sm font-extrabold text-[var(--button-text)] shadow-[0_10px_24px_rgba(185,130,43,0.2)]"
+          >
+            {t.preview.upload}
+          </button>
+          <p className="mt-2 text-xs font-medium leading-5 text-mist">
+            {t.preview.uploadHelper}
+          </p>
+          <div className="-mx-1 mt-3 flex snap-x gap-2 overflow-x-auto px-1 pb-2">
+            {uploadedImage ? (
+              <button
+                type="button"
+                onClick={() => setUploadedImage(null)}
+                className="relative h-16 w-16 shrink-0 snap-start overflow-hidden rounded-lg border border-cyan bg-[#f3eee7]"
+                title={t.preview.uploadedName}
+              >
+                <img src={uploadedImage} alt={t.preview.uploadedName} className="h-full w-full object-contain" />
+              </button>
+            ) : null}
+            {previewCharacters.map((character) => (
+              <button
+                key={`mobile-${character.id}`}
+                type="button"
+                onClick={() => {
+                  setUploadedImage(null);
+                  setCharacterId(character.id);
+                }}
+                className={cn(
+                  "relative h-16 w-16 shrink-0 snap-start overflow-hidden rounded-lg border bg-[#f3eee7]",
+                  !uploadedImage && characterId === character.id
+                    ? "border-cyan shadow-[0_0_0_2px_rgba(58,175,169,0.2)]"
+                    : "border-black/5",
+                )}
+                title={character.name}
+              >
+                <Image src={character.image} alt={character.name} fill sizes="64px" className="object-contain p-1" />
+              </button>
+            ))}
+          </div>
+        </div>
+
+        <div className="mt-3 grid grid-cols-4 gap-1.5 sm:mt-4 sm:gap-2">
           {chips.map((chip) => (
             <button
               key={chip.key}
               type="button"
               onClick={() => setSelected(chip.key)}
               className={cn(
-                "rounded-full border px-3 py-2 text-sm font-bold transition",
+                "min-h-11 rounded-full border px-1.5 py-2 text-xs font-bold transition sm:px-3 sm:text-sm",
                 selected === chip.key
                   ? "border-gold bg-gold text-[var(--button-text)]"
                   : "border-[var(--line)] bg-void/50 text-mist hover:text-ivory",
@@ -944,7 +990,7 @@ function RoomScalePreview({ t }: { t: (typeof copy)[Lang] }) {
 
 function FeaturedPieces({ lang, t }: { lang: Lang; t: (typeof copy)[Lang] }) {
   return (
-    <section id="collections" className="relative bg-void px-5 py-12 md:px-10 md:py-20 xl:px-16">
+    <section id="collections" className="relative bg-void px-4 py-9 md:px-10 md:py-20 xl:px-16">
       <div className="mx-auto max-w-[1440px]">
         <FadeUp className="max-w-4xl">
           <p className="mb-3 text-sm font-bold uppercase tracking-[0.18em] text-gold">
@@ -1010,7 +1056,7 @@ function FeaturedPieces({ lang, t }: { lang: Lang; t: (typeof copy)[Lang] }) {
 
 function OrderDepositSection({ t }: { t: (typeof copy)[Lang] }) {
   return (
-    <section className="bg-void px-5 py-10 md:px-10 md:py-16 xl:px-16">
+    <section className="bg-void px-4 py-8 md:px-10 md:py-16 xl:px-16">
       <FadeUp className="mx-auto max-w-[1180px] rounded-2xl border border-[var(--line)] bg-gallery p-5 shadow-[var(--soft-shadow)] md:p-7">
         <div className="grid gap-6 lg:grid-cols-[0.82fr_1.18fr] lg:items-end">
           <div>
@@ -1236,7 +1282,7 @@ function StorySection({ t }: { t: (typeof copy)[Lang] }) {
   };
 
   return (
-    <section id="about" className="bg-void px-5 py-12 md:px-10 md:py-20 xl:px-16">
+    <section id="about" className="bg-void px-4 py-9 md:px-10 md:py-20 xl:px-16">
       <div className="mx-auto max-w-[1440px]">
         <FadeUp className="grid gap-6 md:grid-cols-[0.78fr_1.22fr] md:items-end">
           <div>
@@ -1338,7 +1384,7 @@ function StorySection({ t }: { t: (typeof copy)[Lang] }) {
 
 function HowItWorks({ t }: { t: (typeof copy)[Lang] }) {
   return (
-    <section className="bg-void px-5 py-10 md:px-10 md:py-16 xl:px-16">
+    <section className="bg-void px-4 py-8 md:px-10 md:py-16 xl:px-16">
       <div className="mx-auto max-w-[1180px]">
         <FadeUp className="text-center">
           <p className="mb-3 text-sm font-bold uppercase tracking-[0.18em] text-gold">
@@ -1367,7 +1413,7 @@ function HowItWorks({ t }: { t: (typeof copy)[Lang] }) {
 
 function DreamProject({ t }: { t: (typeof copy)[Lang] }) {
   return (
-    <section id="dream-project" className="bg-void px-5 py-10 md:px-10 md:py-16 xl:px-16">
+    <section id="dream-project" className="bg-void px-4 py-8 md:px-10 md:py-16 xl:px-16">
       <FadeUp className="relative z-10 mx-auto grid max-w-[1120px] items-center gap-6 rounded-2xl border border-[var(--line)] bg-gallery p-5 shadow-[var(--soft-shadow)] md:grid-cols-[1fr_auto] md:p-7">
         <div>
           <h2 className="text-[clamp(2.2rem,4.5vw,4.8rem)] font-semibold leading-[1.03] tracking-[-0.04em]">
@@ -1387,7 +1433,7 @@ function DreamProject({ t }: { t: (typeof copy)[Lang] }) {
 
 function FinalCta({ t }: { t: (typeof copy)[Lang] }) {
   return (
-    <section className="relative overflow-hidden bg-void px-5 py-10 md:px-10 md:py-16 xl:px-16">
+    <section className="relative overflow-hidden bg-void px-4 py-8 md:px-10 md:py-16 xl:px-16">
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_54%_48%_at_50%_42%,rgba(185,130,43,0.12)_0%,transparent_72%)]" />
       <FadeUp className="relative z-10 mx-auto max-w-4xl text-center">
         <h2 className="text-[clamp(2.35rem,4.6vw,5rem)] font-semibold leading-[1.03] tracking-[-0.04em]">
@@ -1406,7 +1452,7 @@ function FinalCta({ t }: { t: (typeof copy)[Lang] }) {
 
 function Footer({ t }: { t: (typeof copy)[Lang] }) {
   return (
-    <footer className="border-t border-[var(--line)] bg-gallery-lift px-5 py-10 md:px-10 md:py-14 xl:px-16">
+    <footer className="border-t border-[var(--line)] bg-gallery-lift px-4 py-8 md:px-10 md:py-14 xl:px-16">
       <div className="mx-auto flex max-w-[1440px] flex-col gap-8 md:flex-row md:items-end md:justify-between">
         <div>
           <p className="font-display text-2xl text-ivory">Collector Dream Factory</p>
