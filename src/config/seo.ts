@@ -49,7 +49,15 @@ export function organizationJsonLd() {
     description: brand.description,
     slogan: `${brand.thaiTagline} | ${brand.englishTagline}`,
     areaServed: "Thailand",
-    sameAs: [links.youtube, links.tiktok, links.facebookInbox, links.instagram, links.line],
+    sameAs: [
+      links.youtube,
+      links.tiktok,
+      links.facebookInbox,
+      links.instagram,
+      links.line,
+      links.fastwork,
+      links.shopee,
+    ],
     contactPoint: [
       {
         "@type": "ContactPoint",

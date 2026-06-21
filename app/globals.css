@@ -56,6 +56,9 @@
 html {
   scroll-behavior: smooth;
   background: var(--void);
+  width: 100%;
+  max-width: 100%;
+  overflow-x: clip;
   overflow-x: hidden;
 }
 
@@ -65,6 +68,9 @@ body {
   background: var(--void);
   color: var(--ivory);
   font-family: var(--font-sans);
+  width: 100%;
+  max-width: 100%;
+  overflow-x: clip;
   overflow-x: hidden;
 }
 
@@ -104,8 +110,8 @@ a {
 
 /* Mobile Hero Headline Fix */
 .hero-headline-fix {
-  font-size: clamp(3.2rem, 13vw, 4.2rem);
-  line-height: 0.88;
+  font-size: clamp(2.1rem, 9.2vw, 3rem);
+  line-height: 0.95;
   letter-spacing: -0.06em;
   max-width: 100%;
   word-break: keep-all;

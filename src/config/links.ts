@@ -5,6 +5,8 @@ export const links = {
   facebookInbox: "https://m.me/61557714339022",
   instagram: "https://www.instagram.com/meme_Premium123",
   line: "https://line.me/R/ti/p/@299ckiiy",
+  fastwork: "https://fastwork.co/user/arobot/3d-printing-70196979",
+  shopee: "https://shopee.co.th/shop/111198034",
   depositLink: "https://m.me/61557714339022?ref=deposit",
 } as const;
 
@@ -33,6 +35,16 @@ export const socialLinks = [
     name: "LINE",
     handle: "@299ckiiy",
     href: links.line,
+  },
+  {
+    name: "Fastwork",
+    handle: "arobot / 3D Printing",
+    href: links.fastwork,
+  },
+  {
+    name: "Shopee",
+    handle: "shop/111198034",
+    href: links.shopee,
   },
 ] as const;
 

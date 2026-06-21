@@ -35,7 +35,7 @@ const copy = {
       close: "ปิด",
     },
     hero: {
-      headline: "ผลงาน\u200bในฝัน\u200bสำหรับ\u200bนักสะสม\u200bตัวจริง",
+      headline: "ผลงานในฝันสำหรับ\nนักสะสมตัวจริง",
       subheadline:
         "สตูดิโอรับทำฟิกเกอร์และรับทำโมเดล เลือกตัวละคร ขนาดที่ต้องการ และพรีวิวในห้องจริงได้ทันทีสำหรับของสะสมสั่งทำในฝันของคุณ",
       primary: "ดูตัวอย่างขนาด",
@@ -637,7 +637,7 @@ function Hero({ t }: { t: (typeof copy)[Lang] }) {
             initial={{ opacity: 0, y: 26 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ ...transitions.cinematic, delay: 0.45 }}
-            className="hero-headline-fix font-semibold text-ivory"
+            className="hero-headline-fix max-w-[10.5ch] whitespace-pre-line font-semibold text-ivory md:max-w-none"
           >
             {t.hero.headline}
           </motion.h1>
@@ -743,6 +743,14 @@ function RoomScalePreview({ t }: { t: (typeof copy)[Lang] }) {
           </span>
         </div>
 
+        <input
+          ref={fileInputRef}
+          type="file"
+          accept="image/*"
+          onChange={handleUpload}
+          className="sr-only"
+        />
+
         <div className="relative aspect-[1.25/1] overflow-hidden rounded-xl border border-[var(--line)] bg-[#efe7dc] dark:bg-gallery-lift sm:aspect-[1.34/1]">
           <div className="absolute inset-0 bg-[linear-gradient(135deg,rgba(255,255,255,0.82)_0%,rgba(239,231,220,0.74)_45%,rgba(214,197,174,0.54)_100%)]" />
 
@@ -796,13 +804,6 @@ function RoomScalePreview({ t }: { t: (typeof copy)[Lang] }) {
               </p>
               <span className="text-xs font-bold text-[#6d6258]">1L</span>
             </div>
-            <input
-              ref={fileInputRef}
-              type="file"
-              accept="image/*"
-              onChange={handleUpload}
-              className="sr-only"
-            />
             <button
               type="button"
               onClick={() => fileInputRef.current?.click()}
@@ -859,9 +860,9 @@ function RoomScalePreview({ t }: { t: (typeof copy)[Lang] }) {
             </div>
           </div>
 
-          <div className="absolute bottom-[20%] right-[17%] z-10 h-[62%] w-[5%] rounded-full border border-black/20 bg-black/5" />
-          <div className="absolute bottom-[18%] right-[16%] z-10 h-[4%] w-[7%] rounded-full bg-black/10 blur-sm" />
-          <p className="absolute right-[12%] top-[20%] z-10 text-[10px] font-bold uppercase tracking-[0.08em] text-mist">
+          <div className="absolute bottom-[20%] right-[24%] z-10 h-[62%] w-[5%] rounded-full border border-black/20 bg-black/5 sm:right-[17%]" />
+          <div className="absolute bottom-[18%] right-[23%] z-10 h-[4%] w-[7%] rounded-full bg-black/10 blur-sm sm:right-[16%]" />
+          <p className="absolute right-[18%] top-[20%] z-10 text-[10px] font-bold uppercase tracking-[0.08em] text-mist sm:right-[12%]">
             {t.preview.human}
           </p>
 
@@ -877,7 +878,7 @@ function RoomScalePreview({ t }: { t: (typeof copy)[Lang] }) {
             }}
             transition={transitions.smooth}
             className={cn(
-              "absolute bottom-[17%] right-[21%] z-20 origin-bottom drop-shadow-[0_18px_18px_rgba(23,19,15,0.23)]",
+              "absolute bottom-[17%] right-[31%] z-20 origin-bottom drop-shadow-[0_18px_18px_rgba(23,19,15,0.23)] sm:right-[21%]",
               uploadedImage &&
                 "overflow-hidden rounded-lg border border-cyan/30 bg-white/18 p-1 shadow-[0_16px_30px_rgba(23,19,15,0.18)] backdrop-blur-[1px]",
             )}
@@ -900,20 +901,20 @@ function RoomScalePreview({ t }: { t: (typeof copy)[Lang] }) {
           <motion.div
             animate={{ width: `${active.width + 6}%` }}
             transition={transitions.smooth}
-            className="absolute bottom-[15%] right-[20%] z-10 h-[4%] rounded-full bg-black/16 blur-md"
+            className="absolute bottom-[15%] right-[30%] z-10 h-[4%] rounded-full bg-black/16 blur-md sm:right-[20%]"
           />
 
           <motion.div
             animate={{ height: `${active.line}%` }}
             transition={transitions.smooth}
-            className="absolute bottom-[17%] right-[18%] z-30 w-px bg-cyan shadow-[0_0_18px_rgba(58,175,169,0.6)]"
+            className="absolute bottom-[17%] right-[24%] z-30 w-px bg-cyan shadow-[0_0_18px_rgba(58,175,169,0.6)] sm:right-[18%]"
           />
           <motion.div
             key={`${selected}-${activeCharacter.image}`}
             initial={{ opacity: 0, x: -8 }}
             animate={{ opacity: 1, x: 0 }}
             transition={transitions.smooth}
-            className="absolute right-[2%] z-30 rounded-full border border-cyan/40 bg-white/88 px-2 py-1 text-[10px] font-extrabold text-[#17130f] shadow-[0_10px_24px_rgba(23,19,15,0.1)] sm:right-[6%] sm:px-3 sm:text-xs"
+            className="absolute right-[6%] z-30 rounded-full border border-cyan/40 bg-white/88 px-2 py-1 text-[10px] font-extrabold text-[#17130f] shadow-[0_10px_24px_rgba(23,19,15,0.1)] sm:right-[6%] sm:px-3 sm:text-xs"
             style={{ bottom: `calc(17% + ${active.line}% - 18px)` }}
           >
             {t.preview.measurement}: {active.label}

@@ -51,6 +51,8 @@ ${guides.map(g => `- ${g.titleTh} (${siteUrl}/guides/${g.slug}): ${g.excerptTh}`
 - Facebook Messenger: ${links.facebookInbox}
 - Instagram: ${links.instagram}
 - LINE: ${links.line}
+- Fastwork: ${links.fastwork}
+- Shopee: ${links.shopee}
 `;
 
   return new NextResponse(content, {
