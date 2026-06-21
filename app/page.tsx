@@ -751,7 +751,7 @@ function RoomScalePreview({ t }: { t: (typeof copy)[Lang] }) {
           className="sr-only"
         />
 
-        <div className="relative w-full aspect-[5/4] overflow-hidden rounded-xl border border-[var(--line)] bg-[#efe7dc] dark:bg-gallery-lift md:aspect-[4/3]">
+        <div className="relative w-full max-w-full h-auto aspect-[5/4] overflow-hidden rounded-xl border border-[var(--line)] bg-[#efe7dc] dark:bg-gallery-lift md:aspect-[4/3]">
           <div className="absolute inset-0 bg-[linear-gradient(135deg,rgba(255,255,255,0.82)_0%,rgba(239,231,220,0.74)_45%,rgba(214,197,174,0.54)_100%)]" />
 
           <div className="absolute left-[22%] top-[5%] h-[54%] w-[57%] skew-x-[-18deg] rounded-t-lg border-l border-t border-[var(--line)] bg-[#fbfaf7]" />
