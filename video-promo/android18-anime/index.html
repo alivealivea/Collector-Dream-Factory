@@ -1,0 +1,302 @@
+<!doctype html>
+<html lang="th">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=1080,height=1920,initial-scale=1">
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+  <style>
+    @font-face { font-family: "PromoThai"; src: url("fonts/tahoma.ttf") format("truetype"); font-weight: 400 600; }
+    @font-face { font-family: "PromoThai"; src: url("fonts/tahomabd.ttf") format("truetype"); font-weight: 700 900; }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; width: 1080px; height: 1920px; overflow: hidden; background: #F7F3EE; }
+    body { font-family: "PromoThai", sans-serif; color: #17130F; }
+    #promo { position: relative; width: 1080px; height: 1920px; overflow: hidden; background: #F7F3EE; }
+    .scene { position: absolute; inset: 0; width: 1080px; height: 1920px; overflow: hidden; opacity: 0; background-color: #F7F3EE; }
+    #scene1 { opacity: 1; z-index: 1; }
+    #scene2 { z-index: 2; }
+    #scene3 { z-index: 3; }
+    #scene4 { z-index: 4; }
+    #scene5 { z-index: 5; }
+    #scene6 { z-index: 6; }
+    .scene-content { width: 100%; height: 100%; padding: 92px 64px 210px; display: flex; flex-direction: column; gap: 28px; }
+    .grain { position: absolute; inset: 0; pointer-events: none; opacity: .11; z-index: 40; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.23'/%3E%3C/svg%3E"); }
+    .top-label { font-size: 25px; font-weight: 800; letter-spacing: .18em; text-transform: uppercase; color: #B9822B; }
+    .headline { margin: 0; font-size: 78px; line-height: .98; letter-spacing: -.055em; font-weight: 800; max-width: 930px; }
+    .headline .gold { color: #B9822B; }
+    .website-stage { position: relative; width: 900px; height: 1120px; margin: 8px auto 0; border-radius: 38px; overflow: hidden; border: 2px solid rgba(139,91,38,.18); background: #FFFFFF; box-shadow: 0 38px 100px rgba(72,50,24,.2); }
+    .website-stage img { width: 100%; height: 100%; object-fit: cover; object-position: top center; }
+    .site-shot-wide { transform-origin: top center; }
+    .host-wrap { position: absolute; z-index: 24; width: 440px; height: 900px; right: -20px; bottom: 165px; display: flex; align-items: flex-end; justify-content: center; filter: drop-shadow(0 30px 30px rgba(72,50,24,.28)); }
+    .host { width: 100%; height: 100%; object-fit: contain; object-position: bottom center; }
+    .mouth { position: absolute; z-index: 26; width: 30px; height: 9px; border-radius: 50%; background: #6b2f2d; right: 203px; top: 236px; opacity: .78; transform-origin: center; }
+    .eye-flash { position: absolute; z-index: 27; width: 112px; height: 5px; border-radius: 999px; background: #3AAFA9; box-shadow: 0 0 22px #3AAFA9; right: 158px; top: 212px; opacity: 0; }
+    .caption-zone { position: absolute; z-index: 60; left: 54px; right: 54px; bottom: 170px; height: 210px; display: flex; align-items: center; justify-content: center; pointer-events: none; }
+    .caption { position: absolute; max-width: 950px; padding: 20px 34px 22px; border-radius: 26px; color: #F7F3EE; background: rgba(23,19,15,.94); box-shadow: 0 18px 44px rgba(23,19,15,.25); font-size: 52px; line-height: 1.16; font-weight: 800; text-align: center; opacity: 0; }
+    .caption em { display: inline-block; padding: 0 10px 3px; border-radius: 10px; color: #FFF1CE; background: #17130F; font-style: normal; text-decoration: underline; text-decoration-color: #B9822B; text-decoration-thickness: 7px; text-underline-offset: 8px; }
+    .caption .cyan { display: inline-block; padding: 0 10px 3px; border-radius: 10px; color: #D8FFFB; background: #17130F; text-shadow: 0 0 16px rgba(58,175,169,.75); }
+    .cursor { position: absolute; z-index: 35; width: 68px; height: 68px; filter: drop-shadow(0 8px 10px rgba(23,19,15,.25)); }
+    .cursor::before { content: ""; position: absolute; left: 15px; top: 8px; width: 28px; height: 42px; background: #17130F; clip-path: polygon(0 0,100% 70%,55% 68%,76% 100%,57% 100%,38% 70%,0 100%); }
+    .click-ring { position: absolute; z-index: 34; width: 90px; height: 90px; border: 7px solid #B9822B; border-radius: 50%; opacity: 0; }
+    .wipe { position: absolute; z-index: 90; inset: -250px; background: #B9822B; transform: rotate(-12deg) translateX(-1600px); opacity: 0; pointer-events: none; }
+    .speed-lines { position: absolute; z-index: 20; inset: -80px; opacity: 0; background: repeating-conic-gradient(from 0deg, rgba(23,19,15,.92) 0deg 1deg, rgba(23,19,15,0) 1.4deg 7deg); mask-image: radial-gradient(circle at center, transparent 0 23%, #000 58%); }
+    .stamp { position: absolute; z-index: 30; left: 70px; top: 180px; padding: 18px 28px; border: 8px solid #17130F; color: #17130F; background: #F2B85C; font-size: 76px; line-height: 1; font-weight: 800; transform: rotate(-7deg); box-shadow: 12px 12px 0 #17130F; }
+    .scale-panel { width: 950px; margin: 80px auto 0; border-radius: 36px; padding: 34px; background: #FFFFFF; border: 2px solid rgba(23,19,15,.12); box-shadow: 0 30px 80px rgba(72,50,24,.16); }
+    .room { position: relative; height: 900px; overflow: hidden; border-radius: 28px; background: #EFE7DC; }
+    .room-bg { width: 100%; height: 100%; object-fit: cover; }
+    .scale-host { position: absolute; right: 62px; bottom: 38px; height: 430px; width: 300px; display: flex; align-items: flex-end; justify-content: center; filter: drop-shadow(0 22px 22px rgba(72,50,24,.25)); transform-origin: bottom center; }
+    .scale-host img { max-height: 100%; max-width: 100%; object-fit: contain; }
+    .measure { position: absolute; right: 34px; bottom: 38px; width: 5px; height: 430px; background: #3AAFA9; box-shadow: 0 0 18px rgba(58,175,169,.5); transform-origin: bottom; }
+    .scale-buttons { display: grid; grid-template-columns: repeat(4,1fr); gap: 14px; margin-top: 22px; }
+    .pill { padding: 18px 8px; border-radius: 999px; border: 2px solid rgba(23,19,15,.13); color: #6D6258; background: #F7F3EE; font-size: 28px; font-weight: 800; text-align: center; }
+    .pill.active { color: #17130F; border-color: #B9822B; background: #B9822B; }
+    .reaction { position: absolute; z-index: 28; left: 76px; top: 430px; padding: 20px 28px; border-radius: 22px; background: #17130F; color: #F7F3EE; font-size: 48px; font-weight: 800; transform: rotate(-3deg); }
+    .collection-rail { display: flex; gap: 26px; width: 1540px; margin-top: 52px; }
+    .character-card { width: 430px; height: 1050px; flex: 0 0 auto; overflow: hidden; border-radius: 32px; background: #FFFFFF; border: 2px solid rgba(23,19,15,.12); box-shadow: 0 30px 75px rgba(72,50,24,.17); }
+    .character-card img { width: 100%; height: 730px; object-fit: contain; background: #EFE7DC; }
+    .character-copy { padding: 30px; }
+    .character-copy h3 { margin: 0; font-size: 54px; line-height: 1; }
+    .character-copy p { margin: 16px 0 0; font-size: 28px; line-height: 1.4; color: #6D6258; }
+    .understanding { position: absolute; z-index: 28; right: 60px; top: 1150px; max-width: 780px; padding: 25px 34px; color: #F7F3EE; background: #17130F; font-size: 48px; line-height: 1.15; font-weight: 800; border-radius: 25px; }
+    .steps { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; margin-top: 60px; }
+    .step { min-height: 300px; padding: 32px; border-radius: 30px; background: #FFFFFF; border: 2px solid rgba(23,19,15,.11); box-shadow: 0 22px 55px rgba(72,50,24,.12); }
+    .step-num { font-family: "PromoThai", sans-serif; color: #B9822B; font-size: 66px; line-height: 1; }
+    .step h3 { margin: 28px 0 0; font-size: 40px; line-height: 1.1; }
+    .step.done { background: #B9822B; color: #17130F; }
+    .explain-tag { margin-top: 26px; align-self: flex-end; max-width: 860px; padding: 23px 30px; border-radius: 24px; background: #17130F; color: #F7F3EE; font-size: 48px; line-height: 1.15; font-weight: 800; }
+    .final-photo { width: 950px; height: 1090px; border-radius: 38px; overflow: hidden; box-shadow: 0 38px 100px rgba(72,50,24,.24); border: 2px solid rgba(23,19,15,.12); }
+    .final-photo img { width: 100%; height: 100%; object-fit: cover; object-position: center; }
+    .brand { font-family: "PromoThai", sans-serif; font-size: 72px; line-height: 1; font-weight: 700; letter-spacing: -.035em; }
+    .url { font-size: 31px; font-weight: 800; color: #B9822B; letter-spacing: .015em; }
+    .close-line { font-size: 43px; line-height: 1.18; font-weight: 800; max-width: 900px; }
+    .iris { position: absolute; z-index: 89; inset: 0; background: #B9822B; clip-path: circle(0% at 50% 48%); opacity: 0; }
+  </style>
+</head>
+<body>
+<div id="promo" data-composition-id="android18-anime-promo" data-width="1080" data-height="1920" data-start="0" data-duration="30">
+  <div id="scene1" class="scene">
+    <div class="scene-content">
+      <div id="s1-label" class="top-label">ANDROID 18 / WEBSITE INSPECTION</div>
+      <h1 id="s1-head" class="headline">ลองวางฉันในห้อง<br><span class="gold">ก่อนสั่งจริง?</span></h1>
+      <div id="s1-site" class="website-stage" data-layout-allow-overflow><img class="site-shot-wide" src="capture/screenshots/scroll-000.png" alt=""></div>
+    </div>
+    <div id="host1" class="host-wrap" data-layout-allow-overflow><img class="host" src="assets/android-host-1.png" alt=""><span id="mouth1" class="mouth"></span><span id="eye1" class="eye-flash"></span></div>
+    <div id="cursor1" class="cursor" style="left:690px;top:920px"></div>
+    <div id="ring1" class="click-ring" style="left:675px;top:905px"></div>
+  </div>
+
+  <div id="scene2" class="scene">
+    <div class="scene-content">
+      <div id="s2-label" class="top-label">ROOM SCALE PREVIEW</div>
+      <h2 id="s2-head" class="headline">ขนาดเพิ่ม<br><span class="gold">เหตุผลเริ่มลด</span></h2>
+      <div id="scale-panel" class="scale-panel">
+        <div class="room">
+          <img class="room-bg" src="capture/assets/premium-isometric-living-room-for-room-s.jpg" alt="">
+          <div id="scale-host" class="scale-host"><img src="assets/android-host-2.png" alt=""></div>
+          <div id="measure" class="measure"></div>
+        </div>
+        <div class="scale-buttons">
+          <div id="p30" class="pill">30 cm</div><div id="p60" class="pill">60 cm</div><div id="p100" class="pill">100 cm</div><div id="p170" class="pill">170 cm</div>
+        </div>
+      </div>
+    </div>
+    <div id="scale-reaction" class="reaction">วางโต๊ะได้</div>
+    <div id="cursor2" class="cursor" style="left:165px;top:1500px"></div>
+    <div id="ring2" class="click-ring" style="left:150px;top:1485px"></div>
+  </div>
+
+  <div id="scene3" class="scene">
+    <div id="lines3" class="speed-lines"></div>
+    <div class="scene-content">
+      <div id="s3-label" class="top-label">LIFE-SIZE MODE</div>
+      <div id="s3-proof" class="final-photo"><img src="capture/assets/life-size-android-18-collectible-display.jpg" alt=""></div>
+    </div>
+    <div id="host3" class="host-wrap" data-layout-allow-overflow style="width:620px;height:1300px;right:-25px;bottom:80px"><img class="host" src="assets/android-host-3.png" alt=""><span id="mouth3" class="mouth" style="right:288px;top:340px"></span></div>
+    <div id="stamp3" class="stamp">ฉันอยู่บ้านนี้</div>
+  </div>
+
+  <div id="scene4" class="scene">
+    <div class="scene-content">
+      <div id="s4-label" class="top-label">SELECT YOUR HERO PIECE</div>
+      <h2 id="s4-head" class="headline">เลือกตามรสนิยม<br><span class="gold">และแรงต้านในบ้าน</span></h2>
+      <div id="rail4" class="collection-rail" data-layout-allow-overflow>
+        <article class="character-card"><img src="capture/assets/akaza.jpg" alt=""><div class="character-copy"><h3>Akaza</h3><p>ท่าใหญ่ รายละเอียดชัด พื้นที่ก็ใช้ชัดเช่นกัน</p></div></article>
+        <article class="character-card"><img src="capture/assets/goku.jpg" alt=""><div class="character-copy"><h3>Goku</h3><p>ความทรงจำวัยเด็ก ในขนาดที่ผู้ใหญ่ต้องคุยกัน</p></div></article>
+        <article class="character-card"><img src="capture/assets/r2-d2.jpg" alt=""><div class="character-copy"><h3>R2-D2</h3><p>Life-size Collection ที่ไม่แกล้งทำเป็นเล็ก</p></div></article>
+      </div>
+    </div>
+    <div id="host4" class="host-wrap" style="width:330px;height:700px;right:4px;bottom:175px"><img class="host" src="assets/android-host-4.png" alt=""><span id="mouth4" class="mouth" style="right:151px;top:181px;width:24px"></span></div>
+    <div id="understanding" class="understanding">ระดับความเข้าใจ<br>ของคนที่บ้าน</div>
+  </div>
+
+  <div id="scene5" class="scene">
+    <div class="scene-content">
+      <div id="s5-label" class="top-label">HOW IT WORKS</div>
+      <h2 id="s5-head" class="headline">สั่งง่าย<br><span class="gold">อธิบายทีหลัง</span></h2>
+      <div class="steps">
+        <div id="step1" class="step"><div class="step-num">01</div><h3>ส่งรูปอ้างอิง</h3></div>
+        <div id="step2" class="step"><div class="step-num">02</div><h3>เลือกขนาด</h3></div>
+        <div id="step3" class="step"><div class="step-num">03</div><h3>ขอประเมิน</h3></div>
+        <div id="step4" class="step"><div class="step-num">04</div><h3>วางมัดจำ</h3></div>
+      </div>
+      <div id="explain" class="explain-tag">ง่ายกว่าการอธิบายว่า<br>“ซื้อมาทำไม” ค่ะ</div>
+    </div>
+    <div id="cursor5" class="cursor" style="left:770px;top:1200px"></div>
+    <div id="ring5" class="click-ring" style="left:755px;top:1185px"></div>
+  </div>
+
+  <div id="scene6" class="scene">
+    <div class="scene-content">
+      <div id="s6-label" class="top-label">CUSTOM COLLECTIBLE THAILAND</div>
+      <div id="final-photo" class="final-photo" data-layout-allow-overflow><img src="assets/android-proof-final.jpg" alt=""></div>
+      <div id="brand" class="brand">Collector Dream Factory</div>
+      <div id="url" class="url">collector-dream-factory.vercel.app</div>
+      <div id="close-line" class="close-line">ของสะสมในฝัน<br>ที่อาจใหญ่กว่าพื้นที่ใช้สอยจริง</div>
+    </div>
+  </div>
+
+  <div id="wipe" class="wipe"></div>
+  <div id="iris" class="iris"></div>
+  <div class="grain" data-layout-ignore></div>
+  <div class="caption-zone" data-layout-allow-overflow>
+    <div id="cap0" class="caption">เว็บนี้ให้ลองวางฉันในห้องก่อนสั่ง</div>
+    <div id="cap1" class="caption">หึ… ดีค่ะ จะได้รู้ว่าต้องย้ายโซฟา หรือย้ายคน</div>
+    <div id="cap2" class="caption">30 เซน วางโต๊ะได้</div>
+    <div id="cap3" class="caption">60 เซน เริ่มเบียดทีวี</div>
+    <div id="cap4" class="caption">หนึ่งเมตร คนในบ้านเริ่มถาม</div>
+    <div id="cap5" class="caption">170 เซน? ไม่ต้องถามแล้วค่ะ</div>
+    <div id="cap6" class="caption">มีทั้งอากาซะ โกคู อาร์ทูดีทู</div>
+    <div id="cap7" class="caption">เลือกตามรสนิยม… และระดับความเข้าใจของคนที่บ้าน</div>
+    <div id="cap8" class="caption">ส่งรูป เลือกขนาด ขอประเมิน</div>
+    <div id="cap9" class="caption">ง่ายกว่าการอธิบายว่าซื้อมาทำไมค่ะ</div>
+    <div id="cap10" class="caption">Collector Dream Factory</div>
+    <div id="cap11" class="caption">ของสะสมในฝัน… ที่อาจใหญ่กว่าพื้นที่ใช้สอยจริง</div>
+  </div>
+
+  <audio id="narration" src="narration.wav" data-start="0" data-duration="30" data-track-index="10" data-volume="1"></audio>
+  <audio id="soundbed" src="sound-bed.wav" data-start="0" data-duration="30" data-track-index="11" data-volume="0.42"></audio>
+</div>
+<script>
+  window.__timelines = window.__timelines || {};
+  var tl = gsap.timeline({ paused: true });
+
+  function enterScene(scene, time, mode) {
+    tl.set(scene, { opacity: 1 }, time);
+    if (mode === "whip") {
+      tl.fromTo(scene, { x: 520, filter: "blur(16px)" }, { x: 0, filter: "blur(0px)", duration: .38, ease: "power4.out" }, time);
+    } else if (mode === "zoom") {
+      tl.fromTo(scene, { scale: .78, filter: "blur(20px)" }, { scale: 1, filter: "blur(0px)", duration: .56, ease: "expo.out" }, time);
+    } else {
+      tl.fromTo(scene, { opacity: 0, filter: "blur(18px)" }, { opacity: 1, filter: "blur(0px)", duration: .48, ease: "power3.out" }, time);
+    }
+  }
+
+  function caption(id, start, end, style) {
+    var el = document.getElementById(id);
+    var from = style === "slam" ? { opacity: 0, scale: 1.45, rotation: -5 } : { opacity: 0, y: 38, scale: .94 };
+    var ease = style === "slam" ? "back.out(2.3)" : "expo.out";
+    tl.set(el, { visibility: "visible" }, start);
+    tl.fromTo(el, from, { opacity: 1, y: 0, scale: 1, rotation: 0, duration: .28, ease: ease }, start);
+    tl.to(el, { opacity: 0, scale: .96, duration: .12, ease: "power2.in" }, end - .12);
+    tl.set(el, { opacity: 0, visibility: "hidden" }, end);
+  }
+
+  function mouth(selector, start, duration, count) {
+    tl.fromTo(selector, { scaleY: .25 }, { scaleY: 1.9, duration: duration, repeat: count, yoyo: true, ease: "steps(1)" }, start);
+  }
+
+  tl.fromTo("#s1-label", { opacity: 0, x: -60 }, { opacity: 1, x: 0, duration: .45, ease: "power4.out" }, .18);
+  tl.fromTo("#s1-head", { opacity: 0, y: 70, letterSpacing: ".01em" }, { opacity: 1, y: 0, letterSpacing: "-.055em", duration: .7, ease: "expo.out" }, .32);
+  tl.fromTo("#s1-site", { opacity: 0, y: 130, rotation: 4, scale: .92 }, { opacity: 1, y: 0, rotation: -1.5, scale: 1, duration: .82, ease: "back.out(1.25)" }, .52);
+  tl.to("#s1-site img", { scale: 1.06, y: -40, duration: 5.3, ease: "sine.inOut" }, .55);
+  tl.fromTo("#host1", { opacity: 0, x: 260, rotation: 5 }, { opacity: 1, x: 0, rotation: -1, duration: .72, ease: "back.out(1.6)" }, .72);
+  tl.to("#host1", { y: -10, duration: 1.3, repeat: 3, yoyo: true, ease: "sine.inOut" }, 1.2);
+  tl.fromTo("#cursor1", { opacity: 0, x: 100, y: -80 }, { opacity: 1, x: 0, y: 0, duration: .55, ease: "power3.out" }, 1.45);
+  tl.fromTo("#ring1", { opacity: .9, scale: .2 }, { opacity: 0, scale: 1.8, duration: .42, ease: "power2.out" }, 2.15);
+  tl.fromTo("#eye1", { opacity: 0, scaleX: .2 }, { opacity: .9, scaleX: 1, duration: .16, repeat: 1, yoyo: true, ease: "power4.out" }, 2.92);
+  mouth("#mouth1", .35, .13, 18);
+  caption("cap0", .25, 2.92);
+  caption("cap1", 2.95, 5.87, "slam");
+
+  tl.fromTo("#wipe", { opacity: 1, x: -1600 }, { opacity: 1, x: 1650, duration: .42, ease: "power4.inOut" }, 5.72);
+  enterScene("#scene2", 5.88, "zoom");
+  tl.fromTo("#s2-label", { opacity: 0, x: -55 }, { opacity: 1, x: 0, duration: .36, ease: "power3.out" }, 5.98);
+  tl.fromTo("#s2-head", { opacity: 0, scale: .82, rotation: -3 }, { opacity: 1, scale: 1, rotation: 0, duration: .52, ease: "back.out(1.8)" }, 6.05);
+  tl.fromTo("#scale-panel", { opacity: 0, y: 100 }, { opacity: 1, y: 0, duration: .62, ease: "expo.out" }, 6.15);
+  tl.fromTo("#scale-host", { scale: .25, opacity: 0 }, { scale: .42, opacity: 1, duration: .4, ease: "back.out(1.5)" }, 6.22);
+  tl.fromTo("#measure", { scaleY: .25 }, { scaleY: .42, duration: .4, ease: "power3.out" }, 6.22);
+  tl.fromTo("#cursor2", { opacity: 0, x: 160 }, { opacity: 1, x: 0, duration: .35, ease: "power4.out" }, 6.28);
+  tl.set("#p30", { className: "pill active" }, 6.35);
+  tl.fromTo("#ring2", { opacity: .9, scale: .2 }, { opacity: 0, scale: 1.7, duration: .34, ease: "power2.out" }, 6.35);
+  tl.set("#scale-reaction", { innerText: "วางโต๊ะได้" }, 6.4);
+  tl.fromTo("#scale-reaction", { opacity: 0, x: -80, rotation: -8 }, { opacity: 1, x: 0, rotation: -3, duration: .36, ease: "back.out(2)" }, 6.42);
+  tl.to("#cursor2", { x: 220, duration: .35, ease: "power3.inOut" }, 7.55);
+  tl.set("#p30", { className: "pill" }, 7.8);
+  tl.set("#p60", { className: "pill active" }, 7.8);
+  tl.to("#scale-host", { scale: .67, duration: .38, ease: "back.out(1.7)" }, 7.8);
+  tl.to("#measure", { scaleY: .67, duration: .38, ease: "power3.out" }, 7.8);
+  tl.set("#scale-reaction", { innerText: "เริ่มเบียดทีวี" }, 7.82);
+  tl.fromTo("#ring2", { opacity: .9, scale: .2, x: 220 }, { opacity: 0, scale: 1.7, x: 220, duration: .34 }, 7.8);
+  tl.to("#cursor2", { x: 445, duration: .35, ease: "power3.inOut" }, 9.05);
+  tl.set("#p60", { className: "pill" }, 9.3);
+  tl.set("#p100", { className: "pill active" }, 9.3);
+  tl.to("#scale-host", { scale: .92, duration: .4, ease: "back.out(1.6)" }, 9.3);
+  tl.to("#measure", { scaleY: .92, duration: .4, ease: "power3.out" }, 9.3);
+  tl.set("#scale-reaction", { innerText: "คนในบ้านเริ่มถาม" }, 9.32);
+  tl.fromTo("#ring2", { opacity: .9, scale: .2, x: 445 }, { opacity: 0, scale: 1.7, x: 445, duration: .34 }, 9.3);
+  caption("cap2", 5.95, 7.58);
+  caption("cap3", 7.6, 9.08, "slam");
+  caption("cap4", 9.1, 11.35);
+
+  enterScene("#scene3", 11.38, "zoom");
+  tl.fromTo("#s3-label", { opacity: 0, y: -40 }, { opacity: 1, y: 0, duration: .3, ease: "power4.out" }, 11.42);
+  tl.fromTo("#s3-proof", { opacity: 0, scale: .88 }, { opacity: 1, scale: 1.03, duration: .55, ease: "expo.out" }, 11.45);
+  tl.fromTo("#host3", { opacity: 0, scale: .45, y: 280 }, { opacity: 1, scale: 1, y: 0, duration: .58, ease: "back.out(1.45)" }, 11.5);
+  tl.fromTo("#lines3", { opacity: 0, rotation: -8, scale: .7 }, { opacity: .18, rotation: 4, scale: 1.2, duration: .46, ease: "power4.out" }, 11.58);
+  tl.fromTo("#stamp3", { opacity: 0, scale: 1.8, rotation: -18 }, { opacity: 1, scale: 1, rotation: -7, duration: .32, ease: "back.out(2.5)" }, 12.55);
+  mouth("#mouth3", 11.55, .12, 10);
+  caption("cap5", 11.42, 14.18, "slam");
+
+  enterScene("#scene4", 14.25, "whip");
+  tl.fromTo("#s4-label", { opacity: 0, x: -75 }, { opacity: 1, x: 0, duration: .36, ease: "power4.out" }, 14.38);
+  tl.fromTo("#s4-head", { opacity: 0, y: 70 }, { opacity: 1, y: 0, duration: .56, ease: "expo.out" }, 14.45);
+  tl.fromTo(".character-card", { opacity: 0, y: 110, rotation: 5 }, { opacity: 1, y: 0, rotation: 0, duration: .55, stagger: .12, ease: "back.out(1.45)" }, 14.65);
+  tl.fromTo("#rail4", { x: 80 }, { x: -350, duration: 6.35, ease: "sine.inOut" }, 14.7);
+  tl.fromTo("#host4", { opacity: 0, x: 180 }, { opacity: 1, x: 0, duration: .48, ease: "power3.out" }, 15.0);
+  tl.to("#host4", { y: -8, duration: 1.1, repeat: 4, yoyo: true, ease: "sine.inOut" }, 15.5);
+  tl.fromTo("#understanding", { opacity: 0, scale: .7, rotation: 7 }, { opacity: 1, scale: 1, rotation: -2, duration: .42, ease: "back.out(2.1)" }, 18.7);
+  mouth("#mouth4", 14.5, .13, 22);
+  caption("cap6", 14.35, 17.18);
+  caption("cap7", 17.2, 21.28, "slam");
+
+  enterScene("#scene5", 21.32, "fade");
+  tl.fromTo("#s5-label", { opacity: 0, x: -50 }, { opacity: 1, x: 0, duration: .34, ease: "power4.out" }, 21.4);
+  tl.fromTo("#s5-head", { opacity: 0, scale: .86 }, { opacity: 1, scale: 1, duration: .48, ease: "back.out(1.7)" }, 21.48);
+  tl.fromTo(".step", { opacity: 0, y: 90, rotation: 3 }, { opacity: 1, y: 0, rotation: 0, duration: .44, stagger: .11, ease: "expo.out" }, 21.65);
+  tl.fromTo("#cursor5", { opacity: 0, x: 100, y: -80 }, { opacity: 1, x: 0, y: 0, duration: .36, ease: "power4.out" }, 22.0);
+  tl.set("#step1", { className: "step done" }, 22.1);
+  tl.fromTo("#ring5", { opacity: .9, scale: .2, x: -525, y: -310 }, { opacity: 0, scale: 1.7, x: -525, y: -310, duration: .28 }, 22.1);
+  tl.set("#step2", { className: "step done" }, 22.65);
+  tl.set("#step3", { className: "step done" }, 23.2);
+  tl.set("#step4", { className: "step done" }, 23.75);
+  tl.fromTo("#explain", { opacity: 0, x: 130, rotation: 4 }, { opacity: 1, x: 0, rotation: -1, duration: .44, ease: "back.out(1.8)" }, 24.0);
+  caption("cap8", 21.4, 23.78);
+  caption("cap9", 23.8, 26.22, "slam");
+
+  tl.set("#iris", { opacity: 1 }, 26.05);
+  tl.fromTo("#iris", { clipPath: "circle(0% at 50% 48%)" }, { clipPath: "circle(82% at 50% 48%)", duration: .38, ease: "power4.inOut" }, 26.05);
+  enterScene("#scene6", 26.22, "zoom");
+  tl.set("#iris", { opacity: 0 }, 26.44);
+  tl.fromTo("#s6-label", { opacity: 0, x: -55 }, { opacity: 1, x: 0, duration: .32, ease: "power4.out" }, 26.32);
+  tl.fromTo("#final-photo", { opacity: 0, y: 95, scale: .94 }, { opacity: 1, y: 0, scale: 1, duration: .58, ease: "expo.out" }, 26.38);
+  tl.to("#final-photo img", { scale: 1.045, y: -20, duration: 3.5, ease: "sine.inOut" }, 26.4);
+  tl.fromTo("#brand", { opacity: 0, letterSpacing: ".08em" }, { opacity: 1, letterSpacing: "-.01em", duration: .48, ease: "power3.out" }, 26.7);
+  tl.fromTo("#url", { opacity: 0, x: -40 }, { opacity: 1, x: 0, duration: .38, ease: "power2.out" }, 27.0);
+  tl.fromTo("#close-line", { opacity: 0, y: 45 }, { opacity: 1, y: 0, duration: .5, ease: "back.out(1.4)" }, 27.55);
+  caption("cap10", 26.32, 27.78);
+  caption("cap11", 27.8, 29.88, "slam");
+  tl.to("#scene6", { opacity: .92, duration: .35, ease: "sine.in" }, 29.6);
+
+  window.__timelines["android18-anime-promo"] = tl;
+</script>
+</body>
+</html>

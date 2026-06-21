@@ -1,0 +1,62 @@
+# Asset Descriptions
+
+One line per file. Read this instead of opening every image individually.
+
+- akaza-body-detail-close-up.jpg — 16KB, akaza body detail close up
+- akaza-large-sculpture-during-finishing-p.jpg — 69KB, akaza large sculpture during finishing p
+- akaza-prototype-scale-and-pose.jpg — 34KB, akaza prototype scale and pose
+- akaza-sculpture-detail-angle.jpg — 19KB, akaza sculpture detail angle
+- akaza-work-in-progress-detail.jpg — 21KB, akaza work in progress detail
+- akaza.jpg — 37KB, akaza
+- android-18.jpg — 22KB, android 18
+- bearbrick.jpg — 33KB, bearbrick
+- c-3po.jpg — 35KB, c 3po
+- character-group-build-and-finishing-tabl.jpg — 59KB, character group build and finishing tabl
+- character-model-lineup-for-future-hero-p.jpg — 33KB, character model lineup for future hero p
+- collector-figure-preparation-and-pose-st.jpg — 32KB, collector figure preparation and pose st
+- compact-display-collectible-preview.jpg — 11KB, compact display collectible preview
+- custom-couple-collectible-from-reference.jpg — 35KB, custom couple collectible from reference
+- digital-model-set-before-becoming-real-c.jpg — 28KB, digital model set before becoming real c
+- finished-character-lineup-for-display.jpg — 28KB, finished character lineup for display
+- goku-character-build-preview.jpg — 70KB, goku character build preview
+- goku.jpg — 52KB, goku
+- group-overflow-hidden.png — 145KB, group overflow hidden
+- height-comparison-between-170-cm-human-s.jpg — 202KB, height comparison between 170 cm human s
+- hero-pieces.jpg — 30KB, hero pieces
+- image.jpg — 41KB, "Premium isometric living room for room scale preview", section: "ผลงานในฝันสำหรับ
+นักสะสมตัวจริง", above fold
+- large-cat-collectible-with-scale-compari.jpg — 24KB, large cat collectible with scale compari
+- large-character-figure-preview-angle.jpg — 92KB, large character figure preview angle
+- large-character-figure-preview-detail.jpg — 76KB, large character figure preview detail
+- large-character-figure-preview-side-angl.jpg — 86KB, large character figure preview side angl
+- life-size-android-18-collectible-display.jpg — 60KB, life size android 18 collectible display
+- lovers.jpg — 88KB, lovers
+- memory-figure-made-from-a-real-photograp.jpg — 443KB, memory figure made from a real photograp
+- mini-display-figure-preview.jpg — 12KB, mini display figure preview
+- miniature-person-collectible-for-display.jpg — 30KB, miniature person collectible for display
+- premium-isometric-living-room-for-room-s.jpg — 465KB, premium isometric living room for room s
+- princess-figure-prototype-in-gray-finish.jpg — 114KB, princess figure prototype in gray finish
+- r2-d2-life-size-build-beside-maker.jpg — 41KB, r2 d2 life size build beside maker
+- r2-d2-scale-build-in-progress.jpg — 40KB, r2 d2 scale build in progress
+- r2-d2.jpg — 31KB, r2 d2
+- reference-to-collectible-transformation-.jpg — 79KB, reference to collectible transformation 
+- relative-overflow-hidden.png — 83KB, relative overflow hidden
+- small-character-piece-for-shelf-display.jpg — 10KB, small character piece for shelf display
+- small-collectible-finishing-preview.jpg — 13KB, small collectible finishing preview
+- small-collectible-preview-item.jpg — 18KB, small collectible preview item
+- small-custom-figure-prototype.jpg — 15KB, small custom figure prototype
+- stitch-collectible-showcase-with-multipl.jpg — 45KB, stitch collectible showcase with multipl
+- stitch.jpg — 52KB, stitch
+- tall-character-screenshot-for-size-plann.jpg — 96KB, tall character screenshot for size plann
+- watermelon-character-scale-check-on-tabl.jpg — 30KB, watermelon character scale check on tabl
+- watermelon.jpg — 45KB, watermelon
+- svgs/lucide-arrow-left.svg — icon: lucide-arrow-left
+- svgs/lucide-arrow-right-2.svg — icon: lucide-arrow-right
+- svgs/lucide-arrow-right-3.svg — icon: lucide-arrow-right
+- svgs/lucide-arrow-right-4.svg — icon: lucide-arrow-right
+- svgs/lucide-arrow-right-5.svg — icon: lucide-arrow-right
+- svgs/lucide-arrow-right-6.svg — icon: lucide-arrow-right
+- svgs/lucide-arrow-right-7.svg — icon: lucide-arrow-right
+- svgs/lucide-arrow-right-8.svg — icon: lucide-arrow-right
+- svgs/lucide-arrow-right.svg — icon: lucide-arrow-right
+- svgs/lucide-menu.svg — icon: lucide-menu

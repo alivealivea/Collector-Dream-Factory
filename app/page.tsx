@@ -751,7 +751,7 @@ function RoomScalePreview({ t }: { t: (typeof copy)[Lang] }) {
           className="sr-only"
         />
 
-        <div className="relative aspect-[1.25/1] overflow-hidden rounded-xl border border-[var(--line)] bg-[#efe7dc] dark:bg-gallery-lift sm:aspect-[1.34/1]">
+        <div className="relative w-full aspect-[5/4] overflow-hidden rounded-xl border border-[var(--line)] bg-[#efe7dc] dark:bg-gallery-lift md:aspect-[4/3]">
           <div className="absolute inset-0 bg-[linear-gradient(135deg,rgba(255,255,255,0.82)_0%,rgba(239,231,220,0.74)_45%,rgba(214,197,174,0.54)_100%)]" />
 
           <div className="absolute left-[22%] top-[5%] h-[54%] w-[57%] skew-x-[-18deg] rounded-t-lg border-l border-t border-[var(--line)] bg-[#fbfaf7]" />
@@ -793,11 +793,11 @@ function RoomScalePreview({ t }: { t: (typeof copy)[Lang] }) {
             fill
             priority
             sizes="(min-width: 1024px) 58vw, 96vw"
-            className="absolute inset-0 z-[1] object-contain object-center sm:object-cover"
+            className="absolute inset-0 z-[1] object-contain object-center md:object-cover"
           />
           <div className="absolute inset-0 z-[2] bg-[linear-gradient(90deg,rgba(247,243,238,0.08)_0%,transparent_32%,rgba(247,243,238,0.18)_100%)]" />
 
-          <div className="absolute left-2 top-2 z-20 hidden w-[34%] rounded-xl border border-[var(--line)] bg-white/88 p-2 shadow-[0_18px_44px_rgba(23,19,15,0.14)] backdrop-blur-md sm:left-3 sm:top-3 sm:block sm:w-[28%] sm:p-3">
+          <div className="absolute left-2 top-2 z-20 hidden w-[34%] rounded-xl border border-[var(--line)] bg-white/88 p-2 shadow-[0_18px_44px_rgba(23,19,15,0.14)] backdrop-blur-md md:left-3 md:top-3 md:block md:w-[28%] md:p-3">
             <div className="mb-3 flex items-center justify-between gap-2">
               <p className="text-xs font-extrabold italic text-[#17130f] sm:text-sm">
                 {t.preview.library}
@@ -860,9 +860,9 @@ function RoomScalePreview({ t }: { t: (typeof copy)[Lang] }) {
             </div>
           </div>
 
-          <div className="absolute bottom-[20%] right-[24%] z-10 h-[62%] w-[5%] rounded-full border border-black/20 bg-black/5 sm:right-[17%]" />
-          <div className="absolute bottom-[18%] right-[23%] z-10 h-[4%] w-[7%] rounded-full bg-black/10 blur-sm sm:right-[16%]" />
-          <p className="absolute right-[18%] top-[20%] z-10 text-[10px] font-bold uppercase tracking-[0.08em] text-mist sm:right-[12%]">
+          <div className="absolute bottom-[20%] right-[24%] z-10 h-[62%] w-[5%] rounded-full border border-black/20 bg-black/5 md:right-[17%]" />
+          <div className="absolute bottom-[18%] right-[23%] z-10 h-[4%] w-[7%] rounded-full bg-black/10 blur-sm md:right-[16%]" />
+          <p className="absolute right-[18%] top-[20%] z-10 text-[10px] font-bold uppercase tracking-[0.08em] text-mist md:right-[12%]">
             {t.preview.human}
           </p>
 
@@ -878,7 +878,7 @@ function RoomScalePreview({ t }: { t: (typeof copy)[Lang] }) {
             }}
             transition={transitions.smooth}
             className={cn(
-              "absolute bottom-[17%] right-[31%] z-20 origin-bottom drop-shadow-[0_18px_18px_rgba(23,19,15,0.23)] sm:right-[21%]",
+              "absolute bottom-[17%] right-[31%] z-20 origin-bottom drop-shadow-[0_18px_18px_rgba(23,19,15,0.23)] md:right-[21%]",
               uploadedImage &&
                 "overflow-hidden rounded-lg border border-cyan/30 bg-white/18 p-1 shadow-[0_16px_30px_rgba(23,19,15,0.18)] backdrop-blur-[1px]",
             )}
@@ -901,31 +901,31 @@ function RoomScalePreview({ t }: { t: (typeof copy)[Lang] }) {
           <motion.div
             animate={{ width: `${active.width + 6}%` }}
             transition={transitions.smooth}
-            className="absolute bottom-[15%] right-[30%] z-10 h-[4%] rounded-full bg-black/16 blur-md sm:right-[20%]"
+            className="absolute bottom-[15%] right-[30%] z-10 h-[4%] rounded-full bg-black/16 blur-md md:right-[20%]"
           />
 
           <motion.div
             animate={{ height: `${active.line}%` }}
             transition={transitions.smooth}
-            className="absolute bottom-[17%] right-[24%] z-30 w-px bg-cyan shadow-[0_0_18px_rgba(58,175,169,0.6)] sm:right-[18%]"
+            className="absolute bottom-[17%] right-[24%] z-30 w-px bg-cyan shadow-[0_0_18px_rgba(58,175,169,0.6)] md:right-[18%]"
           />
           <motion.div
             key={`${selected}-${activeCharacter.image}`}
             initial={{ opacity: 0, x: -8 }}
             animate={{ opacity: 1, x: 0 }}
             transition={transitions.smooth}
-            className="absolute right-[6%] z-30 rounded-full border border-cyan/40 bg-white/88 px-2 py-1 text-[10px] font-extrabold text-[#17130f] shadow-[0_10px_24px_rgba(23,19,15,0.1)] sm:right-[6%] sm:px-3 sm:text-xs"
+            className="absolute right-[6%] z-30 rounded-full border border-cyan/40 bg-white/88 px-2 py-1 text-[10px] font-extrabold text-[#17130f] shadow-[0_10px_24px_rgba(23,19,15,0.1)] md:right-[6%] md:px-3 md:text-xs"
             style={{ bottom: `calc(17% + ${active.line}% - 18px)` }}
           >
             {t.preview.measurement}: {active.label}
           </motion.div>
 
-          <div className="absolute bottom-4 left-[34%] z-20 hidden rounded-full border border-[var(--line)] bg-white/82 px-3 py-1 text-xs font-bold text-[#6d6258] shadow-sm sm:block">
+          <div className="absolute bottom-4 left-[34%] z-20 hidden rounded-full border border-[var(--line)] bg-white/82 px-3 py-1 text-xs font-bold text-[#6d6258] shadow-sm md:block">
             {activeCharacter.description}
           </div>
         </div>
 
-        <div className="mt-3 sm:hidden">
+        <div className="mt-3 md:hidden">
           <button
             type="button"
             onClick={() => fileInputRef.current?.click()}
@@ -969,7 +969,7 @@ function RoomScalePreview({ t }: { t: (typeof copy)[Lang] }) {
           </div>
         </div>
 
-        <div className="mt-3 grid grid-cols-2 gap-1.5 sm:mt-4 sm:grid-cols-4 sm:gap-2">
+        <div className="mt-3 grid grid-cols-2 gap-1.5 md:mt-4 md:grid-cols-4 md:gap-2">
           {chips.map((chip) => (
             <button
               key={chip.key}
