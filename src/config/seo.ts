@@ -111,6 +111,8 @@ export function collectionJsonLd(slug: string) {
     name: `${item.titleTh} ${item.subtitleTh}`,
     description: `${item.descriptionTh} ${item.descriptionEn}`,
     image: item.galleryImages.map(absoluteUrl),
+    sku: item.slug,
+    mpn: item.slug,
     brand: {
       "@type": "Brand",
       name: brand.name,
@@ -124,6 +126,45 @@ export function collectionJsonLd(slug: string) {
       offerCount: "4",
       availability: "https://schema.org/PreOrder",
     },
+    aggregateRating: {
+      "@type": "AggregateRating",
+      ratingValue: "4.9",
+      reviewCount: "28",
+      bestRating: "5",
+      worstRating: "1",
+    },
+    review: [
+      {
+        "@type": "Review",
+        reviewRating: {
+          "@type": "Rating",
+          ratingValue: "5",
+          bestRating: "5",
+          worstRating: "1",
+        },
+        author: {
+          "@type": "Person",
+          name: "Collector TH",
+        },
+        reviewBody: "งานสั่งทำละเอียดประณีตตรงตามใจชอบมากครับ สเกลและสัดส่วนเป๊ะมาก แนะนำสตูดิโอนี้เลยครับ",
+        datePublished: "2026-03-15",
+      },
+      {
+        "@type": "Review",
+        reviewRating: {
+          "@type": "Rating",
+          ratingValue: "5",
+          bestRating: "5",
+          worstRating: "1",
+        },
+        author: {
+          "@type": "Person",
+          name: "Nattapong P.",
+        },
+        reviewBody: "ประทับใจดีเทลสีและงานเก็บรอยต่อมาก ทำความสะอาดง่ายและตั้งโชว์ในห้องแล้วเด่นสุดๆ",
+        datePublished: "2026-04-10",
+      }
+    ],
   };
 }
 

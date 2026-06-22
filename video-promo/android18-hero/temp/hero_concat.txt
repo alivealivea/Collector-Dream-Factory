@@ -1,0 +1,6 @@
+file 'C:/Users/alive/OneDrive/เอกสาร/collector-dream-factory/video-promo/android18-hero/temp/scene-01-intro.mp4'
+file 'C:/Users/alive/OneDrive/เอกสาร/collector-dream-factory/video-promo/android18-hero/temp/scene-02-scale.mp4'
+file 'C:/Users/alive/OneDrive/เอกสาร/collector-dream-factory/video-promo/android18-hero/temp/scene-03-lifesize.mp4'
+file 'C:/Users/alive/OneDrive/เอกสาร/collector-dream-factory/video-promo/android18-hero/temp/scene-04-collection.mp4'
+file 'C:/Users/alive/OneDrive/เอกสาร/collector-dream-factory/video-promo/android18-hero/temp/scene-05-steps.mp4'
+file 'C:/Users/alive/OneDrive/เอกสาร/collector-dream-factory/video-promo/android18-hero/temp/scene-06-close.mp4'

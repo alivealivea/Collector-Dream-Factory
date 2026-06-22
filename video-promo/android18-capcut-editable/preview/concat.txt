@@ -1,0 +1,6 @@
+file 'C:/Users/alive/OneDrive/เอกสาร/collector-dream-factory/video-promo/android18-capcut-editable/preview/intro.mp4'
+file 'C:/Users/alive/OneDrive/เอกสาร/collector-dream-factory/video-promo/android18-capcut-editable/preview/scale.mp4'
+file 'C:/Users/alive/OneDrive/เอกสาร/collector-dream-factory/video-promo/android18-capcut-editable/preview/lifesize.mp4'
+file 'C:/Users/alive/OneDrive/เอกสาร/collector-dream-factory/video-promo/android18-capcut-editable/preview/collection.mp4'
+file 'C:/Users/alive/OneDrive/เอกสาร/collector-dream-factory/video-promo/android18-capcut-editable/preview/steps.mp4'
+file 'C:/Users/alive/OneDrive/เอกสาร/collector-dream-factory/video-promo/android18-capcut-editable/preview/close.mp4'

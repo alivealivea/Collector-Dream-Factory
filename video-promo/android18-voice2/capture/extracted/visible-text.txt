@@ -1,0 +1,159 @@
+[a] Collector Dream Factory
+[a] คอลเลกชัน
+[a] เรื่องราว
+[a] คำถามที่พบบ่อย
+[a] Instagram
+[a] เริ่มโปรเจกต์
+[p] ROOM SCALE PREVIEW
+[h1] ผลงานในฝันสำหรับ
+นักสะสมตัวจริง
+[p] สตูดิโอรับทำฟิกเกอร์และรับทำโมเดล เลือกตัวละคร ขนาดที่ต้องการ และพรีวิวในห้องจริงได้ทันทีสำหรับของสะสมสั่งทำในฝันของคุณ
+[a] ดูตัวอย่างขนาด
+[a] เริ่มโปรเจกต์
+[p] ดูสเกลก่อนเริ่มสร้าง
+[p] Android 18
+[p] ชิ้นงานใหญ่ที่เริ่มเห็นสเกลชัดในห้องจริง
+[span] 100 cm
+[p] Model Library
+[button] อัปโหลดรูปของคุณ
+[p] ลองอัปโหลดรูปตัวละครหรือรูปอ้างอิง แล้วดูตัวอย่างในห้องได้ทันที
+[p] 170 cm human
+[div] ขนาดที่เลือก
+[div] 100 cm
+[div] ตัวละครขนาดใหญ่ที่วางในห้องแล้วรู้สึกเหมือนยืนอยู่จริง
+[button] อัปโหลดรูปของคุณ
+[p] ลองอัปโหลดรูปตัวละครหรือรูปอ้างอิง แล้วดูตัวอย่างในห้องได้ทันที
+[button] 30 cm
+[button] 60 cm
+[button] 100 cm
+[button] 170 cm
+[p] FEATURED HERO PIECES
+[h2] Hero Pieces ที่พร้อมกลายเป็นของสะสมของคุณ
+[div] CUSTOM QUOTE
+[p] คน 170 cm
+[div] 100 cm
+[button] อัปโหลดรูปของคุณ
+[h3] อัปโหลดรูปของคุณ เพื่อเสนอราคา
+[p] เริ่มต้น ฿12,000+ / 100 cm
+[p] บริการรับทำโมเดลจากรูปและของสะสมสั่งทำ ลองอัปโหลดรูปตัวละครหรือรูปอ้างอิงของคุณ แล้วเลือกความสูงเพื่อเทียบกับคน 170 ซม. เหมาะสำหรับผู้ที่ต้องการฟิกเกอร์สั่งทำขนาดใหญ่ในราคาจับต้องได้
+[button] 30 cm
+[button] 60 cm
+[button] 100 cm
+[button] 170 cm
+[p] ความสูงที่เลือก
+[span] 100 cm
+[a] ขอประเมินราคาจริง
+[span] Hero Piece
+[h3] Android 18
+[p] Life-size Hero Piece
+[p] ตัวละครขนาดใหญ่ที่ยืนเป็นจุดเด่นของห้องสะสมได้ทันที
+[p] เริ่มต้น ฿18,900+
+[span] ขอประเมินราคาจริง
+[span] Gallery Piece
+[h3] Akaza
+[p] Prototype Hero Piece
+[p] งานปั้นตัวละครขนาดใหญ่ โชว์ฟอร์มและรายละเอียดชัดตั้งแต่แรกเห็น
+[p] เริ่มต้น ฿18,900+
+[span] ขอประเมินราคาจริง
+[span] Hero Piece
+[h3] Goku
+[p] Young Warrior
+[p] ตัวละครที่โตมากับความทรงจำ พร้อมกลายเป็นจุดเด่นของห้องสะสม
+[p] เริ่มต้น ฿12,000+
+[span] ขอประเมินราคาจริง
+[span] Scale Preview
+[h3] Watermelon
+[p] Custom Character Piece
+[p] ภาพเทียบสเกลกับคนจริง เพื่อให้เห็นว่าชิ้นงานวางในบ้านแล้วใหญ่แค่ไหน
+[p] เริ่มต้น ฿3,900+
+[span] ขอประเมินราคาจริง
+[span] Hero Piece
+[h3] R2-D2
+[p] Life-size Collection
+[p] งานหุ่นยนต์ขนาดใหญ่ที่ใช้คนยืนเทียบ เพื่ออ่านสเกลได้ทันที
+[p] เริ่มต้น ฿18,900+
+[span] ขอประเมินราคาจริง
+[span] Gallery Piece
+[h3] Stitch
+[p] Playful Display Piece
+[p] คาแรกเตอร์ playful สำหรับมุมสะสมที่อยากให้สนุกขึ้น
+[p] เริ่มต้น ฿6,900+
+[span] ขอประเมินราคาจริง
+[p] ORDER FLOW
+[h2] เริ่มโปรเจกต์ด้วยมัดจำ
+[p] สำหรับงานสั่งทำ ลูกค้าสามารถวางมัดจำก่อน แล้วค่อยคุยรายละเอียดแบบจริงจัง
+[a] วางมัดจำเริ่มโปรเจกต์
+[a] เริ่มโปรเจกต์ของคุณ
+[h3] เลือกแบบ
+[p] เลือกตัวละครหรืออัปโหลดรูปอ้างอิง
+[h3] วางมัดจำ
+[p] เริ่มต้น 1,000 บาท เพื่อจองคิวประเมินและคุยรายละเอียด
+[h3] เริ่มสร้าง
+[p] คอนเฟิร์มขนาด รายละเอียด และเริ่มผลิตจริง
+[p] STORY / REAL WORKS
+[h2] เรื่องราวจากของสะสม
+[p] บริการรับทำตัวละครขนาดจริง (รับทำ life-size / life-size figure Thailand) จากภาพอ้างอิงและโมเดลสามมิติ ทุกชิ้นงานถูกสร้างขึ้นด้วยฝีมือประณีตเพื่อให้เป็นของสะสมสั่งทำที่ดีที่สุดในชีวิตจริงของคุณ
+[p] Life-size Hero Piece ในพื้นที่จริง
+[p] ภาพผลงานจริงช่วยให้ลูกค้าเห็นสเกล วัสดุ ท่าทาง และความรู้สึกของของสะสมก่อนเริ่มโปรเจกต์
+[p] Collector Gallery
+[p] images · swipe or use arrows
+[figcaption] Custom couple collectible from reference memory
+[figcaption] Digital model set before becoming real collectibles
+[figcaption] Collector figure preparation and pose study
+[figcaption] Finished character lineup for display
+[figcaption] Large cat collectible with scale comparison
+[figcaption] Miniature person collectible for display
+[figcaption] Princess figure prototype in gray finish
+[figcaption] Life-size Android 18 display beside collector
+[figcaption] Character model lineup for future Hero Pieces
+[figcaption] Small custom figure prototype
+[figcaption] Reference-to-collectible transformation concept
+[figcaption] Character group build and finishing table
+[figcaption] Memory figure made from a real photograph
+[figcaption] Akaza large sculpture during finishing process
+[figcaption] Akaza sculpture detail angle
+[figcaption] Akaza prototype scale and pose
+[figcaption] Akaza work-in-progress detail
+[figcaption] Akaza body detail close-up
+[figcaption] R2-D2 scale build in progress
+[figcaption] R2-D2 life-size build beside maker
+[figcaption] Stitch collectible showcase with multiple angles
+[figcaption] Watermelon character scale check on table
+[figcaption] Tall character screenshot for size planning
+[figcaption] Goku character build preview
+[figcaption] Large character figure preview angle
+[figcaption] Large character figure preview side angle
+[figcaption] Large character figure preview detail
+[figcaption] Small collectible preview item
+[figcaption] Compact display collectible preview
+[figcaption] Small character piece for shelf display
+[figcaption] Mini display figure preview
+[figcaption] Small collectible finishing preview
+[p] HOW IT WORKS
+[h2] เริ่มสร้างของสะสมในฝันได้ง่าย ๆ
+[h3] ส่งไอเดียหรือรูปอ้างอิง
+[h3] เลือกขนาดที่อยากได้
+[h3] ดูราคาประเมิน
+[h3] วางมัดจำ แล้วเริ่มผลิต
+[h2] ถ้าตัวละครที่คุณรัก ยืนอยู่ในห้องคุณได้จริงล่ะ?
+[p] บริการรับทำโมเดลและรับทำฟิกเกอร์สั่งทำคุณภาพสูง (custom figure Thailand) เพียงส่งรูปอ้างอิงและเลือกขนาดที่ต้องการ เราพร้อมประเมินราคาและขั้นตอนการผลิตแบบละเอียดให้ทันที
+[a] เริ่ม Dream Build
+[h2] พร้อมเริ่ม Hero Piece ชิ้นแรกของคุณหรือยัง?
+[p] Bring Your Favorite Character Into The Real World.
+[a] เริ่มโปรเจกต์ของคุณ
+[p] Collector Dream Factory
+[p] เปลี่ยนตัวละครที่คุณรักให้กลายเป็นของสะสมสั่งทำและฟิกเกอร์สั่งทำที่ตั้งอยู่ในบ้านคุณได้จริง โดยสตูดิโอรับทำฟิกเกอร์และโมเดลชั้นนำ
+[a] คอลเลกชัน
+[a] เรื่องราว
+[a] คำถามที่พบบ่อย
+[a] คู่มือการสั่งทำ
+[span] meme_Premium123
+[span] meme_Premium123
+[a] Facebook
+[span] meme_Premium123
+[a] Instagram
+[span] meme_Premium123
+[span] @299ckiiy
+[a] Fastwork
+[span] arobot / 3D Printing
+[span] shop/111198034
